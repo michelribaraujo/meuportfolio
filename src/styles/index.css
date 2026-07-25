@@ -1,0 +1,4 @@
+@import '@make-kits/design-system/style.css';
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
