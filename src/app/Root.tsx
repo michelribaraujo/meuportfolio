@@ -3,11 +3,61 @@ import { ArrowLeft, Sun, Moon, Mail } from "lucide-react";
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "motion/react";
 import svgPaths from "../imports/Logo-1/svg-kvxxug3d2k";
+import { metaForPath } from "./seo";
 
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
   }
+}
+
+/** Cria a tag se ainda nao existir e atualiza o conteudo. */
+function setMeta(attr: "name" | "property", key: string, value: string) {
+  let tag = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+  if (!tag) {
+    tag = document.createElement("meta");
+    tag.setAttribute(attr, key);
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute("content", value);
+}
+
+function setCanonical(href: string) {
+  let link = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement("link");
+    link.setAttribute("rel", "canonical");
+    document.head.appendChild(link);
+  }
+  link.setAttribute("href", href);
+}
+
+/**
+ * Aplica titulo, descricao, canonical e Open Graph proprios de cada rota.
+ *
+ * Por que existe: o site e uma SPA e serve o mesmo index.html para as 6
+ * rotas. Sem isto, todos os cases aparecem no Google com o mesmo titulo e a
+ * mesma descricao, e competem entre si como se fossem a mesma pagina. Vale
+ * tambem para o link compartilhado no LinkedIn ou no WhatsApp, que passa a
+ * mostrar o nome do case em vez do nome do site.
+ *
+ * Roda antes de usePageView de proposito: o page_view do GA4 le
+ * document.title, entao o titulo precisa ja estar atualizado.
+ */
+function useDocumentMeta() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const meta = metaForPath(location.pathname);
+    document.title = meta.title;
+    setMeta("name", "description", meta.description);
+    setMeta("property", "og:title", meta.title);
+    setMeta("property", "og:description", meta.description);
+    setMeta("property", "og:url", meta.canonical);
+    setMeta("name", "twitter:title", meta.title);
+    setMeta("name", "twitter:description", meta.description);
+    setCanonical(meta.canonical);
+  }, [location.pathname]);
 }
 
 /**
@@ -551,6 +601,7 @@ export default function Root() {
   const isCase = location.pathname.startsWith("/case/");
   const { dark, toggle } = useTheme();
 
+  useDocumentMeta();
   usePageView();
 
   return (
