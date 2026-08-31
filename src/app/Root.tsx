@@ -567,11 +567,11 @@ export default function Root() {
               <Mail size={15} />
             </a>
             <a
-              href="https://www.linkedin.com/in/mikhaelaraujo/"
+              href="https://www.linkedin.com/in/mikhaelangelo/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              title="linkedin.com/in/mikhaelaraujo"
+              title="linkedin.com/in/mikhaelangelo"
               className="w-8 h-8 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all"
             >
               <LinkedInIcon size={15} />
@@ -612,13 +612,13 @@ export default function Root() {
               michel@mikhaelangelo.com.br
             </a>
             <a
-              href="https://www.linkedin.com/in/mikhaelaraujo/"
+              href="https://www.linkedin.com/in/mikhaelangelo/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors"
             >
               <LinkedInIcon size={14} />
-              linkedin.com/in/mikhaelaraujo
+              linkedin.com/in/mikhaelangelo
             </a>
             <a
               href={WA_URL}

@@ -3805,7 +3805,7 @@ export default function Home() {
                   Ver currículo
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/mikhaelaraujo/"
+                  href="https://www.linkedin.com/in/mikhaelangelo/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 border border-border text-sm font-medium px-5 py-2.5 rounded-full hover:border-primary/40 transition-colors text-muted-foreground hover:text-foreground"

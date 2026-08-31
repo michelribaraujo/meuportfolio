@@ -524,8 +524,8 @@ export default function CaseCIEE() {
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     A diretoria optou por assumir os riscos documentados e avançar sem as correções necessárias.
-                    Meu desligamento ocorreu — consequência direta de ter exposto a verdade técnica e matemática
-                    que contrariava a narrativa de sucesso do projeto.
+                    Depois disso deixei a empresa, num corte coletivo sem relação com o dossiê. O documento ficou:
+                    quem herdou o projeto herdou junto um mapa de riscos com responsáveis, prazos e evidências.
                   </p>
                 </div>
               </div>
