@@ -33,6 +33,17 @@
       content="Perfil híbrido de Product Design, Gestão de Produto e base técnica. Cases com Netflix, Globo, Inter e CIEE."
     />
 
+    <!-- Google Analytics 4 (Mikhaelangelo - GA4).
+         send_page_view fica desligado de proposito: o site e uma SPA e a
+         contagem de page_view acontece no Root.tsx, a cada troca de rota. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3SS1DP4MC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-J3SS1DP4MC", { send_page_view: false });
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 

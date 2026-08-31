@@ -4,6 +4,34 @@ import { useState, useEffect, useMemo } from "react";
 import { motion } from "motion/react";
 import svgPaths from "../imports/Logo-1/svg-kvxxug3d2k";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+/**
+ * Dispara um page_view no GA4 a cada troca de rota.
+ *
+ * Por que existe: o site e uma SPA. Ir da home para /case/zapflix nao
+ * recarrega a pagina, entao a tag do Google sozinha contaria apenas a
+ * primeira visita e todos os cases apareceriam com zero visualizacoes.
+ * O snippet do index.html desliga o envio automatico e a contagem inteira
+ * acontece aqui, inclusive a da primeira carga.
+ */
+function usePageView() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", "page_view", {
+      page_path: location.pathname + location.search,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [location.pathname, location.search]);
+}
+
 const WA_URL =
   "https://wa.me/5531983545099?text=Ol%C3%A1%2C%20vim%20do%20LinkedIn!";
 
@@ -522,6 +550,8 @@ export default function Root() {
   const location = useLocation();
   const isCase = location.pathname.startsWith("/case/");
   const { dark, toggle } = useTheme();
+
+  usePageView();
 
   return (
     <div
