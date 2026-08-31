@@ -6,6 +6,7 @@ import CaseDesignThinking from "./pages/CaseDesignThinking";
 import CaseDiscoveryFlow from "./pages/CaseDiscoveryFlow";
 import CaseConvexMindset from "./pages/CaseConvexMindset";
 import CaseCIEE from "./pages/CaseCIEE";
+import CaseJobiee from "./pages/CaseJobiee";
 import NotFound from "./pages/NotFound";
 
 export const router = createBrowserRouter([
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
       { path: "case/design-thinking", Component: CaseDesignThinking },
       { path: "case/discovery-flow", Component: CaseDiscoveryFlow },
       { path: "case/convex-mindset", Component: CaseConvexMindset },
+      { path: "case/jobiee", Component: CaseJobiee },
       { path: "*", Component: NotFound },
     ],
   },

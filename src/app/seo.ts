@@ -36,6 +36,10 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     title: "Discovery como Escudo de Governança · Michel Araujo",
     description: `Como transformei o processo de Discovery em instrumento de governança, forçando visibilidade executiva sobre riscos críticos antes de um lançamento irresponsável. ${ASSINATURA}`,
   },
+  "/case/jobiee": {
+    title: "190 telas, uma IA, um designer · Jobiee, CIEE",
+    description: `Todo o design de uma plataforma de estágios com IA conversacional, do primeiro fluxo ao design system, feito por um designer só. ${ASSINATURA}`,
+  },
   "/case/convex-mindset": {
     title: "Convex Mindset · Metodologia para Chatbots",
     description: `Uma metodologia proprietária de análise comportamental para chatbots com 4 categorias de intenção. ${ASSINATURA}`,
