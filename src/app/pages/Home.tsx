@@ -21,10 +21,10 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import netflixLogoPng from "../../imports/netflix_logo_icon_170919.png";
+import netflixLogoPng from "../../imports/generated/netflix-logo.webp";
 import svgPaths from "../../imports/Logo-1/svg-kvxxug3d2k";
-import profilePhoto from "../../imports/Gemini_Generated_Image_v95gniv95gniv95g.png";
-import dogPhoto from "../../imports/Gemini_Generated_Image_4z3u2b4z3u2b4z3u.png";
+import profilePhoto from "../../imports/generated/avatar-michel.webp";
+import dogPhoto from "../../imports/generated/avatar-cachorra.webp";
 
 const CV_URL =
   "https://docs.google.com/document/d/e/2PACX-1vQVGtsXMLZWAXUnKXDPV1kSDl7YCYUxV2FzQWeCQbdQLatmKniOrtvABeLGCfSGKLM9qrLhv7YusOZs/pub";
@@ -1020,7 +1020,7 @@ function ProfileCard() {
               <img
                 src={profilePhoto}
                 alt="Michel Araujo"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover" loading="eager" decoding="async"
                 style={{ objectPosition: "50% 14%" }}
               />
             </div>
@@ -1052,7 +1052,7 @@ function ProfileCard() {
                 <img
                   src={dogPhoto}
                   alt="Companheira"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover" loading="eager" decoding="async"
                   style={{ objectPosition: "50% 20%" }}
                 />
               </div>

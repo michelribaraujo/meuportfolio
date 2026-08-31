@@ -1,4 +1,6 @@
-@import '@make-kits/design-system/style.css';
+/* O import do @make-kits/design-system (pacote privado do Figma) foi removido
+   na migracao para hospedagem propria. Nao ha impacto visual: o estilo do site
+   vem de fonts.css + tailwind.css + theme.css. */
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
