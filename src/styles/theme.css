@@ -1,8 +1,12 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Scales linearly with viewport: 16px at 1920px, ~21px at 2560px, min 14px on small screens */
-  --font-size: clamp(14px, 0.833vw, 22px);
+  /* Escala com o viewport acima de 1920px, mas nunca abaixo de 16px.
+     O piso era 14px, o que fazia o site inteiro encolher em qualquer tela
+     menor que 1920 (labels caiam para 10,5px) e entregar menos do que os
+     frames de 1440 do Figma especificam. 16px tambem e a linha de base de
+     acessibilidade. */
+  --font-size: clamp(16px, 0.833vw, 22px);
   /* Light mode: airy powder blue sky → soft haze → warm paper — no jarring horizon */
   --page-gradient: linear-gradient(
     to bottom,
