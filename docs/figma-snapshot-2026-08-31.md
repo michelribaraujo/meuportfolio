@@ -51,7 +51,7 @@ conteúdo está congelado na seção 3 deste documento.
 |---|---|
 | Produção, até 31/ago | "…Meu desligamento ocorreu — consequência direta de ter exposto a verdade técnica e matemática que contrariava a narrativa de sucesso do projeto." |
 | Produção, depois da correção | "…Depois disso deixei a empresa, num corte coletivo sem relação com o dossiê. O documento ficou: quem herdou o projeto herdou junto um mapa de riscos com responsáveis, prazos e evidências." |
-| **Figma, hoje** | "…O dossiê de discovery permaneceu como registro formal da posição técnica — blindando o time e a governança da decisão." |
+| **Figma, e agora também produção** | "…O dossiê de discovery permaneceu como registro formal da posição técnica — blindando o time e a governança da decisão." |
 
 As três começam igual: "A diretoria optou por assumir os riscos documentados e avançar
 sem as correções necessárias."
@@ -59,6 +59,10 @@ sem as correções necessárias."
 A versão do Figma é a mais forte das três: entrega o mesmo argumento sem trazer a saída
 da empresa para dentro do case. Num portfólio, mencionar a própria demissão abre uma
 porta que ninguém pediu para abrir.
+
+**Resolvido em 31/ago:** a produção adotou a versão do Figma, com o travessão trocado por
+vírgula (ele não usa travessão em texto publicado). Figma e produção voltam a dizer a
+mesma coisa neste ponto.
 
 ### 2.3 O Figma estava certo sobre o LinkedIn e a produção estava errada
 
@@ -69,10 +73,10 @@ Corrigido em 31/ago.
 ### 2.4 Os frames de site sumiram do arquivo
 
 Os seis frames `Site / Case …` e os sete `Site RWD / …` construídos em 11/ago **não
-estão mais na página**. Todo o trabalho de fluidificação de 375 a 1600 px que existiu
-naquele arquivo desapareceu.
+estão mais na página**. **Apagados de propósito pelo Michel**: existiam só para adaptar o
+layout ao Figma Sites, hipótese de hospedagem que morreu com a migração.
 
-Não é perda real: o site em produção é responsivo por CSS, que é o lugar certo. Fica
+Nenhuma perda: o site em produção é responsivo por CSS, que é o lugar certo. Fica
 registrado para ninguém procurar por eles depois.
 
 ### 2.5 V2 e V3 nunca chegaram à produção
@@ -82,8 +86,11 @@ e `79:2` (V3, discovery como carta celeste), mais cinco frames de estado do V3
 (`83:2`, `83:15`, `84:2`, `85:2`, `86:2`).
 
 **O site em produção é descendente do V1.** V2 e V3 são trabalho de design feito e nunca
-implementado. Decidir se viram roadmap ou se são arquivados: o que não pode continuar é
-o arquivo sugerindo que o site tem uma cara que ele não tem.
+implementado.
+
+**Decidido em 31/ago:** ficam. São rascunhos vivos de uma futura mudança de UI, que o
+Michel quer trabalhar com calma. Não são dívida nem lixo: são a próxima direção do site,
+ainda em aberto.
 
 ---
 

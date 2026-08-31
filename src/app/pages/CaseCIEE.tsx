@@ -524,8 +524,8 @@ export default function CaseCIEE() {
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     A diretoria optou por assumir os riscos documentados e avançar sem as correções necessárias.
-                    Depois disso deixei a empresa, num corte coletivo sem relação com o dossiê. O documento ficou:
-                    quem herdou o projeto herdou junto um mapa de riscos com responsáveis, prazos e evidências.
+                    O dossiê de discovery permaneceu como registro formal da posição técnica, blindando o time
+                    e a governança da decisão.
                   </p>
                 </div>
               </div>
