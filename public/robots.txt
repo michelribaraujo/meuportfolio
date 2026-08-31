@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mikhaelangelo.com.br/sitemap.xml
+Sitemap: https://mikhaelangelo.com.br/sitemap.xml
