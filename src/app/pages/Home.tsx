@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useRef } from "react";
+import React, { useMemo } from "react";
 import { Link } from "react-router";
 import {
   ArrowRight,
@@ -8,11 +8,6 @@ import {
   MapPin,
   FileText,
   Bell,
-  Search,
-  CheckCircle,
-  LayoutList,
-  Zap,
-  BarChart2,
   Star,
   Mail as MailIcon,
   BookOpen,
@@ -20,7 +15,8 @@ import {
   Target,
   TrendingUp,
 } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
+import DiscoveryOrbit from "../sections/DiscoveryOrbit";
 import netflixLogoPng from "../../imports/generated/netflix-logo.webp";
 import svgPaths from "../../imports/Logo-1/svg-kvxxug3d2k";
 import profilePhoto from "../../imports/generated/avatar-michel.webp";
@@ -2762,105 +2758,8 @@ const fadeUp = {
 };
 
 /* ─────────────────────────────────────────────────────────────
-   DiscoveryProcess — metodologia de discovery em 6 fases
+   Linhas de exemplo da tabela de Gestão de Hipóteses
 ───────────────────────────────────────────────────────────── */
-/* The trigger that ignites discovery — not a phase itself, just the spark */
-const discoverySinal = {
-  colorHex: "#ff6b47",
-  examples: [
-    "Demanda de stakeholder",
-    "Métrica crítica caindo",
-    "Insight de pesquisa",
-    "Necessidade mapeada no mercado",
-    "Feedback recorrente de usuários",
-  ],
-};
-
-const discoveryPhases = [
-  {
-    num: "01",
-    name: "Entender",
-    label: "É preciso entender a fundo esse problema",
-    desc: "Hipóteses são mapeadas e priorizadas. Aqui mora o coração do processo — a Gestão de Hipóteses.",
-    colorHex: "#7C3AED",
-    highlight: true,
-    activities: [
-      "Gestão de Hipóteses",
-      "Pesquisa com usuários",
-      "Análise de dados",
-      "Benchmarking",
-      "Mapa de jornada",
-    ],
-    output: "Árvore de hipóteses + evidências priorizadas",
-    detail:
-      "Aqui mora o coração da minha metodologia: a Gestão de Hipóteses. Cada suposição sobre o problema é estruturada em uma pergunta investigável, associada a um método de pesquisa e rastreada até a evidência que a confirma ou refuta. Nenhuma decisão sai desta fase sem ter sido testada contra dados reais — qualitativos ou quantitativos.",
-  },
-  {
-    num: "02",
-    name: "Decidir",
-    label: "O que vamos fazer com isso?",
-    desc: "Com evidências em mãos, a decisão ganha fundamento. Não é opinião — é dado.",
-    colorHex: "#2563EB",
-    activities: [
-      "Priorização (RICE/ICE)",
-      "Alinhamento executivo",
-      "Go/No-go estruturado",
-      "Métricas de sucesso",
-    ],
-    output: "Decisão documentada + OKR de produto",
-    detail:
-      "Com as evidências da fase anterior, a equipe e os stakeholders se reúnem para uma decisão informada. Uso frameworks de priorização para tornar a escolha transparente e rastreável. Se a decisão for 'não avançar', isso também é um sucesso — significa que o discovery fez seu trabalho.",
-  },
-  {
-    num: "03",
-    name: "Planejar",
-    label: "Se vamos fazer, como vamos fazer?",
-    desc: "Escopo, riscos e critérios de sucesso definidos antes de qualquer linha de código.",
-    colorHex: "#10b981",
-    activities: [
-      "Definition of Ready",
-      "Arquitetura de solução",
-      "Mapeamento de riscos",
-      "Service Blueprint",
-    ],
-    output: "Escopo fechado + Definition of Done",
-    detail:
-      "Antes de qualquer sprint começar, faço o planejamento com a squad técnica. Isso inclui o Definition of Ready para cada história, o mapeamento de dependências entre times, a identificação de riscos e os critérios exatos que definirão o sucesso. O objetivo é que o time entre em execução com clareza total.",
-  },
-  {
-    num: "04",
-    name: "Executar",
-    label: "Mãos à obra, com clareza",
-    desc: "O time executa sabendo o porquê. Sem ambiguidade, sem retrabalho desnecessário.",
-    colorHex: "#f59e0b",
-    activities: [
-      "Sprints com critério claro",
-      "Design de interface",
-      "Handoff técnico",
-      "Testes de usabilidade",
-    ],
-    output: "Produto funcional pronto para monitoramento",
-    detail:
-      "A execução é fluida quando o discovery foi bem feito. O time sabe o porquê de cada decisão, o design tem contexto para escolhas autônomas, e o handoff técnico é preciso. Minha presença nessa fase é de facilitação e desbloqueio — não de microgestão.",
-  },
-  {
-    num: "05",
-    name: "Acompanhar",
-    label: "Medir, aprender, iterar",
-    desc: "O entregável não é o deploy — é a mudança de comportamento.",
-    colorHex: "#60a5fa",
-    activities: [
-      "Monitoramento de KPIs",
-      "Análise pós-lançamento",
-      "Entrevistas de follow-up",
-      "Retrospectiva",
-    ],
-    output: "Relatório de impacto + próximos sinais",
-    detail:
-      "O ciclo não termina no deploy. Monitoro os indicadores definidos na fase de decisão e comparo com as hipóteses que nortearam o projeto. Se os números confirmam a hipótese, documento o aprendizado. Se não, inicio um novo ciclo de entendimento — fechando o loop.",
-  },
-];
-
 const hypothesisRows = [
   {
     hypothesis:
@@ -2886,86 +2785,17 @@ const hypothesisRows = [
   },
 ];
 
-/* Rotating orbit ring around phase number */
-function PhaseOrbitRing({
-  colorHex,
-  isActive,
-}: {
-  colorHex: string;
-  isActive: boolean;
-}) {
-  return (
-    <motion.div
-      className="absolute inset-0 pointer-events-none"
-      animate={{ rotate: 360 }}
-      transition={{
-        duration: isActive ? 4 : 20,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-    >
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 72 72"
-        fill="none"
-      >
-        <ellipse
-          cx="36"
-          cy="36"
-          rx="33"
-          ry="13"
-          stroke={colorHex}
-          strokeWidth="1"
-          strokeDasharray="4 3"
-          strokeLinecap="round"
-          opacity={isActive ? 0.7 : 0.15}
-          transform="rotate(-22 36 36)"
-        />
-        <circle
-          cx="36"
-          cy="3.5"
-          r="3"
-          fill={colorHex}
-          opacity={isActive ? 1 : 0.25}
-        />
-      </svg>
-    </motion.div>
-  );
-}
+/* ─────────────────────────────────────────────────────────────
+   HypothesisTable — a Gestão de Hipóteses em prática
 
-function DiscoveryProcess() {
-  const [selected, setSelected] = useState<number | null>(null);
-  const sel = selected !== null ? discoveryPhases[selected] : null;
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [activeCard, setActiveCard] = useState(0);
-
-  const handleScroll = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const cardWidth = el.scrollWidth / discoveryPhases.length;
-    const idx = Math.round(el.scrollLeft / cardWidth);
-    setActiveCard(Math.min(idx, discoveryPhases.length - 1));
-  };
-
-  const scrollTo = (i: number) => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const cardWidth = el.scrollWidth / discoveryPhases.length;
-    el.scrollTo({ left: cardWidth * i, behavior: "smooth" });
-  };
-  const phaseIcons = [
-    Search,
-    CheckCircle,
-    LayoutList,
-    Zap,
-    BarChart2,
-  ];
-
+   Era a metade final da antiga DiscoveryProcess. Continua no
+   mesmo lugar da página; o que saiu daqui foi o navegador de
+   fases, que virou a seção em órbita no fim da home.
+───────────────────────────────────────────────────────────── */
+function HypothesisTable() {
   return (
     <section className="border-y border-border/40">
       <div className="max-w-6xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-8 2xl:px-16 py-14 sm:py-20">
-        {/* Section label */}
         <motion.div
           className="flex items-center gap-4 mb-10 sm:mb-14"
           initial={{ opacity: 0, y: 12 }}
@@ -2978,545 +2808,10 @@ function DiscoveryProcess() {
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
             <IconOrbit size={14} className="shrink-0" />
-            Processo de Discovery
+            Gestão de Hipóteses
           </h2>
           <div className="h-px flex-1 bg-border" />
         </motion.div>
-
-        {/* Headline + intro */}
-        <div className="grid grid-cols-12 gap-8 lg:gap-12 mb-12 items-end">
-          <motion.div
-            className="col-span-12 lg:col-span-5"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h3
-              className="text-3xl lg:text-4xl 2xl:text-5xl font-bold leading-tight mb-5"
-              style={{
-                fontFamily: "'Playfair Display', serif",
-              }}
-            >
-              Do caos à<br />
-              <em className="not-italic text-primary">
-                decisão fundamentada.
-              </em>
-            </h3>
-            <p className="text-muted-foreground font-light leading-relaxed">
-              Meu processo de discovery não começa com
-              wireframes. Começa com perguntas — e termina só
-              quando as respostas têm evidência. Seis etapas que
-              transformam ambiguidade em direção.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="col-span-12 lg:col-span-7"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.12 }}
-          >
-            <div
-              className="flex items-start gap-4 p-5 rounded-xl border"
-              style={{
-                borderColor: "rgba(124,58,237,0.28)",
-                background: "rgba(124,58,237,0.05)",
-              }}
-            >
-              <IconTelescope
-                size={20}
-                className="shrink-0 mt-0.5"
-                style={{ color: "#7C3AED", opacity: 0.7 }}
-              />
-              <div>
-                <p className="font-semibold text-sm text-foreground mb-1.5">
-                  Gestão de Hipóteses — o núcleo do processo
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed font-light">
-                  Uma metodologia proprietária que estrutura
-                  suposições em perguntas investigáveis, mapeia
-                  os métodos mais eficientes para respondê-las e
-                  rastreia as evidências que emergem. O
-                  resultado: decisões com lastro, não com
-                  feeling.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* ── Etapa 0: O Sinal — trigger that precedes all discovery ── */}
-        <motion.div
-          className="mb-6 sm:mb-8"
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-        >
-          <div className="flex items-stretch gap-0">
-            {/* The trigger block */}
-            <div
-              className="flex-1 rounded-2xl border border-dashed p-4 sm:p-5"
-              style={{
-                borderColor: `${discoverySinal.colorHex}55`,
-                background: `linear-gradient(135deg, var(--card) 0%, ${discoverySinal.colorHex}0d 100%)`,
-              }}
-            >
-              <div className="flex items-start gap-3">
-                <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 mt-0.5"
-                  style={{
-                    background: `${discoverySinal.colorHex}18`,
-                    border: `1px solid ${discoverySinal.colorHex}40`,
-                  }}
-                >
-                  <Bell
-                    size={15}
-                    style={{ color: discoverySinal.colorHex }}
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                    <span
-                      className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
-                      style={{
-                        color: discoverySinal.colorHex,
-                        background: `${discoverySinal.colorHex}18`,
-                        border: `1px solid ${discoverySinal.colorHex}30`,
-                        fontFamily: "'DM Mono', monospace",
-                      }}
-                    >
-                      Etapa 0
-                    </span>
-                    <span className="text-sm font-semibold text-foreground">
-                      O Sinal
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      — o combustível que ignita o Discovery
-                    </span>
-                  </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed mb-2.5">
-                    Não é uma etapa do Discovery em si — é o
-                    gatilho. Um problema ou necessidade emerge
-                    dentro da empresa, no mercado ou no
-                    público-alvo. Pode ser uma demanda de
-                    stakeholder, uma métrica caindo, um insight
-                    de pesquisa ou um padrão identificado no
-                    comportamento dos usuários.
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {discoverySinal.examples.map((ex) => (
-                      <span
-                        key={ex}
-                        className="text-[10px] px-2 py-0.5 rounded-full border"
-                        style={{
-                          color: `${discoverySinal.colorHex}cc`,
-                          borderColor: `${discoverySinal.colorHex}28`,
-                          background: `${discoverySinal.colorHex}0a`,
-                          fontFamily: "'DM Mono', monospace",
-                        }}
-                      >
-                        {ex}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Arrow pointing right → into the phases */}
-            <div className="hidden lg:flex items-center px-3 shrink-0">
-              <div className="flex flex-col items-center gap-1">
-                <div
-                  className="w-8 h-px"
-                  style={{
-                    background: `linear-gradient(to right, ${discoverySinal.colorHex}60, transparent)`,
-                  }}
-                />
-                <ArrowRight
-                  size={14}
-                  style={{
-                    color: discoverySinal.colorHex,
-                    opacity: 0.5,
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile: vertical arrow down */}
-          <div className="flex justify-center mt-2 lg:hidden">
-            <svg
-              width="12"
-              height="20"
-              viewBox="0 0 12 20"
-              fill="none"
-            >
-              <path
-                d="M6 0v16M1 11l5 6 5-6"
-                stroke={discoverySinal.colorHex}
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeOpacity="0.5"
-              />
-            </svg>
-          </div>
-        </motion.div>
-
-        {/* ── Orbital carousel — the 5 actual discovery phases ── */}
-        <div className="relative mb-4">
-          {/* Decorative cosmos orbit rings */}
-          <div
-            className="absolute inset-0 pointer-events-none overflow-hidden"
-            aria-hidden
-          >
-            <svg
-              className="absolute -top-20 -left-24 text-foreground opacity-[0.035]"
-              width="360"
-              height="260"
-              viewBox="0 0 360 260"
-              fill="none"
-            >
-              <ellipse
-                cx="180"
-                cy="130"
-                rx="178"
-                ry="62"
-                stroke="currentColor"
-                strokeWidth="1"
-                transform="rotate(-10 180 130)"
-              />
-              <ellipse
-                cx="180"
-                cy="130"
-                rx="130"
-                ry="44"
-                stroke="currentColor"
-                strokeWidth="0.7"
-                transform="rotate(-10 180 130)"
-              />
-              <circle
-                cx="180"
-                cy="68"
-                r="3"
-                fill="currentColor"
-                opacity="0.5"
-              />
-            </svg>
-            <svg
-              className="absolute -bottom-12 -right-20 text-foreground opacity-[0.03]"
-              width="300"
-              height="220"
-              viewBox="0 0 300 220"
-              fill="none"
-            >
-              <ellipse
-                cx="150"
-                cy="110"
-                rx="148"
-                ry="52"
-                stroke="currentColor"
-                strokeWidth="1"
-                transform="rotate(14 150 110)"
-              />
-              <circle
-                cx="150"
-                cy="58"
-                r="2.5"
-                fill="currentColor"
-                opacity="0.5"
-              />
-            </svg>
-          </div>
-
-          {/* Scrollable row — horizontal carousel on mobile, 5-col grid on desktop */}
-          <div
-            ref={scrollRef}
-            onScroll={handleScroll}
-            className="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory lg:grid lg:grid-cols-5 lg:overflow-visible lg:pb-0"
-            style={{ scrollbarWidth: "none" }}
-          >
-            {discoveryPhases.map((phase, i) => {
-              const isActive = selected === i;
-              return (
-                <motion.button
-                  key={phase.num}
-                  type="button"
-                  onClick={() =>
-                    setSelected(isActive ? null : i)
-                  }
-                  className="group snap-start shrink-0 w-[70vw] sm:w-[200px] lg:w-auto relative flex flex-col rounded-2xl border p-5 text-left cursor-pointer transition-colors duration-300 focus:outline-none backdrop-blur-sm"
-                  style={{
-                    background: isActive
-                      ? `${phase.colorHex}0e`
-                      : "var(--card)",
-                    borderColor: isActive
-                      ? `${phase.colorHex}60`
-                      : "var(--border)",
-                    boxShadow: isActive
-                      ? `0 0 0 2px ${phase.colorHex}25, 0 8px 28px ${phase.colorHex}18`
-                      : "none",
-                  }}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ duration: 0.2 }}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                >
-                  {/* Hover: soft radial tint from bottom */}
-                  <div
-                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500"
-                    style={{
-                      background: `radial-gradient(ellipse 80% 70% at 50% 110%, ${phase.colorHex}22 0%, transparent 70%)`,
-                    }}
-                  />
-                  {/* Hover: inner border accent glow */}
-                  <div
-                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-400"
-                    style={{
-                      boxShadow: `inset 0 0 0 1px ${phase.colorHex}45`,
-                    }}
-                  />
-                  {/* Top accent bar */}
-                  <div
-                    className="absolute top-0 left-4 right-4 h-[2px] rounded-b-full transition-opacity duration-300"
-                    style={{
-                      background: phase.colorHex,
-                      opacity: isActive ? 1 : 0,
-                    }}
-                  />
-
-                  {/* Orbital number badge */}
-                  <div className="relative w-[72px] h-[72px] mb-4 self-start">
-                    <PhaseOrbitRing
-                      colorHex={phase.colorHex}
-                      isActive={isActive}
-                    />
-                    <div
-                      className="absolute flex items-center justify-center rounded-full border-2 transition-all duration-300"
-                      style={{
-                        width: 42,
-                        height: 42,
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)",
-                        borderColor: `${phase.colorHex}${isActive ? "90" : "40"}`,
-                        background: `${phase.colorHex}${isActive ? "18" : "0c"}`,
-                      }}
-                    >
-                      <span
-                        className="text-xs font-bold leading-none"
-                        style={{
-                          fontFamily: "'DM Mono', monospace",
-                          color: phase.colorHex,
-                        }}
-                      >
-                        {phase.num}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2 mb-1.5">
-                    {React.createElement(phaseIcons[i], {
-                      size: 12,
-                      className: "shrink-0",
-                      style: { color: phase.colorHex },
-                    })}
-                    <p className="font-semibold text-sm text-foreground">
-                      {phase.name}
-                    </p>
-                    {phase.highlight && (
-                      <span
-                        className="text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-wider"
-                        style={{
-                          background: `${phase.colorHex}20`,
-                          color: phase.colorHex,
-                        }}
-                      >
-                        núcleo
-                      </span>
-                    )}
-                  </div>
-                  <p
-                    className="text-xs text-muted-foreground leading-relaxed mb-2.5 flex-1"
-                    style={{
-                      fontFamily: "'Playfair Display', serif",
-                      fontStyle: "italic",
-                    }}
-                  >
-                    "{phase.label}"
-                  </p>
-                  <p className="text-xs text-muted-foreground leading-snug font-light mb-4">
-                    {phase.desc}
-                  </p>
-
-                  <span
-                    className="text-[10px] transition-colors duration-200"
-                    style={{
-                      color: isActive
-                        ? phase.colorHex
-                        : "var(--muted-foreground)",
-                      fontFamily: "'DM Mono', monospace",
-                    }}
-                  >
-                    {isActive
-                      ? "▼ recolher"
-                      : "▶ ver detalhes"}
-                  </span>
-                </motion.button>
-              );
-            })}
-          </div>
-
-          {/* Mobile scroll indicators — dots + swipe hint (hidden on desktop) */}
-          <div className="flex flex-col items-center gap-2 mt-4 lg:hidden">
-            {/* Dots */}
-            <div className="flex items-center gap-2">
-              {discoveryPhases.map((phase, i) => (
-                <button
-                  key={i}
-                  onClick={() => scrollTo(i)}
-                  aria-label={`Ir para fase ${i + 1}`}
-                  className="transition-all duration-300 rounded-full"
-                  style={{
-                    width: activeCard === i ? 20 : 7,
-                    height: 7,
-                    background: activeCard === i ? phase.colorHex : "var(--muted-foreground)",
-                    opacity: activeCard === i ? 0.9 : 0.3,
-                  }}
-                />
-              ))}
-            </div>
-            {/* Swipe hint — only shown on first card */}
-            {activeCard === 0 && (
-              <motion.p
-                className="text-[10px] text-muted-foreground flex items-center gap-1"
-                style={{ fontFamily: "'DM Mono', monospace" }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ delay: 0.8 }}
-              >
-                <span style={{ letterSpacing: "0.05em" }}>deslize para ver mais</span>
-                <span>→</span>
-              </motion.p>
-            )}
-          </div>
-        </div>
-
-        {/* Detail panel — expands below selected card */}
-        <AnimatePresence mode="wait">
-          {sel && (
-            <motion.div
-              key={`detail-${selected}`}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{
-                duration: 0.32,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              style={{ overflow: "hidden" }}
-            >
-              <div
-                className="mt-3 mb-12 rounded-2xl border p-6 sm:p-8"
-                style={{
-                  borderColor: `${sel.colorHex}40`,
-                  background: `linear-gradient(135deg, var(--card) 0%, ${sel.colorHex}0d 100%)`,
-                  boxShadow: `0 4px 32px ${sel.colorHex}12`,
-                }}
-              >
-                <div className="grid grid-cols-12 gap-6 items-start">
-                  <div className="col-span-12 lg:col-span-7">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span
-                        className="text-xs font-bold"
-                        style={{
-                          fontFamily: "'DM Mono', monospace",
-                          color: sel.colorHex,
-                        }}
-                      >
-                        {sel.num}
-                      </span>
-                      <h4
-                        className="text-xl font-bold text-foreground"
-                        style={{
-                          fontFamily:
-                            "'Playfair Display', serif",
-                        }}
-                      >
-                        {sel.name}
-                      </h4>
-                      {sel.highlight && (
-                        <span
-                          className="text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider"
-                          style={{
-                            background: `${sel.colorHex}20`,
-                            color: sel.colorHex,
-                          }}
-                        >
-                          núcleo metodológico
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-muted-foreground font-light leading-relaxed text-sm">
-                      {sel.detail}
-                    </p>
-                  </div>
-                  <div className="col-span-12 lg:col-span-5 space-y-5">
-                    <div>
-                      <p
-                        className="text-xs text-muted-foreground uppercase tracking-widest mb-3"
-                        style={{
-                          fontFamily: "'DM Mono', monospace",
-                        }}
-                      >
-                        Atividades principais
-                      </p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {sel.activities.map((act) => (
-                          <span
-                            key={act}
-                            className="text-xs font-medium px-3 py-1 rounded-full border"
-                            style={{
-                              color: sel.colorHex,
-                              borderColor: `${sel.colorHex}35`,
-                              background: `${sel.colorHex}0e`,
-                            }}
-                          >
-                            {act}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="pt-1">
-                      <p
-                        className="text-xs text-muted-foreground uppercase tracking-widest mb-2"
-                        style={{
-                          fontFamily: "'DM Mono', monospace",
-                        }}
-                      >
-                        Output da fase
-                      </p>
-                      <div className="flex items-start gap-2">
-                        <span
-                          className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full block"
-                          style={{ background: sel.colorHex }}
-                        />
-                        <p className="text-sm text-foreground font-medium leading-snug">
-                          {sel.output}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
         {/* Gestão de Hipóteses table */}
         <motion.div
@@ -3718,6 +3013,7 @@ function DiscoveryProcess() {
   );
 }
 
+
 export default function Home() {
   return (
     <div style={{ fontFamily: "'Outfit', sans-serif" }}>
@@ -3905,8 +3201,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ── Discovery Process ── */}
-      <DiscoveryProcess />
+      {/* ── Gestão de Hipóteses ── */}
+      <HypothesisTable />
 
       {/* ── About ── */}
       <section className="border-t border-border/40">
@@ -4146,8 +3442,14 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Breathing room at bottom so the fixed corner moon is visible */}
+      {/* Breathing room so the fixed corner moon is visible */}
       <div className="h-20 sm:h-32" aria-hidden />
+
+      {/* ── Discovery em órbita ──
+          Fica por último de propósito: o sol precisa encostar no
+          rodapé para a coroa ser cortada pela borda da tela, e
+          não por uma faixa vazia. */}
+      <DiscoveryOrbit />
     </div>
   );
 }
