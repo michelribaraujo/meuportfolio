@@ -1,14 +1,14 @@
 /**
  * Titulo, descricao e canonical de cada rota do site.
  *
- * Por que existe: o site e uma SPA e serve um unico index.html para as 6
- * rotas. Sem isto, todas as paginas entregam ao Google e ao GA4 o mesmo
+ * Por que existe: o site e uma SPA e serve um unico index.html para todas
+ * as rotas. Sem isto, todas as paginas entregam ao Google e ao GA4 o mesmo
  * <title> e a mesma meta description, e os cases passam a competir entre si
  * como se fossem a mesma pagina. Os textos abaixo sao os mesmos que
  * descrevem cada case na home, para o site nao falar duas linguas.
  *
- * Ao adicionar um case novo: entrada aqui, entrada em routes.ts e linha no
- * public/sitemap.xml. Os tres andam juntos.
+ * Ao adicionar uma rota nova (case ou prompt): entrada aqui, entrada em
+ * routes.ts e linha no public/sitemap.xml. Os tres andam juntos.
  */
 
 export const SITE_URL = "https://mikhaelangelo.com.br";
@@ -28,6 +28,16 @@ export const HOME_META: RouteMeta = {
 
 export const ROUTE_META: Record<string, RouteMeta> = {
   "/": HOME_META,
+  "/prompts": {
+    title: "Prompts · Michel Araujo",
+    description:
+      "Prompts de IA que nasceram resolvendo um problema real de trabalho. Feitos e testados por Michel Araujo, Product Designer Sênior.",
+  },
+  "/prompts/mentor-de-carreiras": {
+    title: "Prompt do Mentor de Carreira · IA para LinkedIn, currículo e portfólio",
+    description:
+      "O prompt completo do agente de IA que assume LinkedIn, currículo e portfólio, entrevista você uma pergunta por vez e monta os seus cases. Grátis, com o modelo de memória junto.",
+  },
   "/case/zapflix": {
     title: "O Cavalo de Troia Digital · Zapflix, Netflix Brasil",
     description: `Um chatbot com falso positivo nas métricas se torna canal de aquisição massiva de um público invisível ao mercado. ${ASSINATURA}`,

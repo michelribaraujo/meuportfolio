@@ -7,6 +7,8 @@ import CaseDiscoveryFlow from "./pages/CaseDiscoveryFlow";
 import CaseConvexMindset from "./pages/CaseConvexMindset";
 import CaseCIEE from "./pages/CaseCIEE";
 import CaseJobiee from "./pages/CaseJobiee";
+import Prompts from "./pages/Prompts";
+import PromptMentorCarreira from "./pages/PromptMentorCarreira";
 import NotFound from "./pages/NotFound";
 
 export const router = createBrowserRouter([
@@ -21,6 +23,8 @@ export const router = createBrowserRouter([
       { path: "case/discovery-flow", Component: CaseDiscoveryFlow },
       { path: "case/convex-mindset", Component: CaseConvexMindset },
       { path: "case/jobiee", Component: CaseJobiee },
+      { path: "prompts", Component: Prompts },
+      { path: "prompts/mentor-de-carreiras", Component: PromptMentorCarreira },
       { path: "*", Component: NotFound },
     ],
   },
