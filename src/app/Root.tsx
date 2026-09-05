@@ -3,7 +3,8 @@ import { ArrowLeft, Sun, Moon, Mail } from "lucide-react";
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "motion/react";
 import svgPaths from "../imports/Logo-1/svg-kvxxug3d2k";
-import { metaForPath } from "./seo";
+import { metaForPath, SITE_URL } from "./seo";
+import { trackEvent } from "./analytics";
 
 declare global {
   interface Window {
@@ -32,6 +33,9 @@ function setCanonical(href: string) {
   link.setAttribute("href", href);
 }
 
+/** Imagem de compartilhamento. Serve para toda rota: e a marca, nao a pagina. */
+const OG_IMAGE = `${SITE_URL}/og.png`;
+
 /**
  * Aplica titulo, descricao, canonical e Open Graph proprios de cada rota.
  *
@@ -54,6 +58,8 @@ function useDocumentMeta() {
     setMeta("property", "og:title", meta.title);
     setMeta("property", "og:description", meta.description);
     setMeta("property", "og:url", meta.canonical);
+    setMeta("property", "og:image", OG_IMAGE);
+    setMeta("name", "twitter:image", OG_IMAGE);
     setMeta("name", "twitter:title", meta.title);
     setMeta("name", "twitter:description", meta.description);
     setCanonical(meta.canonical);
@@ -80,6 +86,21 @@ function usePageView() {
       page_title: document.title,
     });
   }, [location.pathname, location.search]);
+}
+
+/**
+ * Conta a abertura de um case, com o slug junto.
+ *
+ * O page_view ja registra a URL, mas nao da para marcar page_view como evento
+ * principal sem transformar toda visita em conversao. Este evento separado e
+ * o que permite dizer "abrir case e sucesso" sem inflar a metrica.
+ */
+function useCaseView() {
+  const location = useLocation();
+  useEffect(() => {
+    if (!location.pathname.startsWith("/case/")) return;
+    trackEvent("ver_case", { case_slug: location.pathname.replace("/case/", "") });
+  }, [location.pathname]);
 }
 
 const WA_URL =
@@ -603,6 +624,7 @@ export default function Root() {
 
   useDocumentMeta();
   usePageView();
+  useCaseView();
 
   return (
     <div
@@ -643,6 +665,7 @@ export default function Root() {
               href="mailto:michel@mikhaelangelo.com.br"
               aria-label="Enviar e-mail"
               title="michel@mikhaelangelo.com.br"
+              onClick={() => trackEvent("clique_email", { local: "header" })}
               className="w-8 h-8 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all"
             >
               <Mail size={15} />
@@ -653,6 +676,7 @@ export default function Root() {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
               title="linkedin.com/in/mikhaelangelo"
+              onClick={() => trackEvent("clique_linkedin", { local: "header" })}
               className="w-8 h-8 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all"
             >
               <LinkedInIcon size={15} />
@@ -687,6 +711,7 @@ export default function Root() {
           <div className="flex gap-6 flex-wrap justify-center">
             <a
               href="mailto:michel@mikhaelangelo.com.br"
+              onClick={() => trackEvent("clique_email", { local: "rodape" })}
               className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail size={14} />
@@ -696,6 +721,7 @@ export default function Root() {
               href="https://www.linkedin.com/in/mikhaelangelo/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent("clique_linkedin", { local: "rodape" })}
               className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors"
             >
               <LinkedInIcon size={14} />
@@ -705,6 +731,7 @@ export default function Root() {
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent("clique_whatsapp", { local: "rodape" })}
               className="text-xs text-muted-foreground hover:text-[#25d366] transition-colors flex items-center gap-1.5"
             >
               <WhatsAppIcon size={14} />
@@ -719,6 +746,7 @@ export default function Root() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Conversar no WhatsApp"
+        onClick={() => trackEvent("clique_whatsapp", { local: "flutuante" })}
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-[#25d366] text-white shadow-lg hover:bg-[#20bd5a] active:scale-95 transition-all duration-200 rounded-full px-4 py-3 group"
       >
         <WhatsAppIcon size={20} />
