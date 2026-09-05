@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo } from "react";
 import { motion } from "motion/react";
 import svgPaths from "../imports/Logo-1/svg-kvxxug3d2k";
 import { metaForPath, SITE_URL } from "./seo";
-import { trackEvent } from "./analytics";
+import { trackEvent, MEDINDO } from "./analytics";
 
 declare global {
   interface Window {
@@ -74,11 +74,15 @@ function useDocumentMeta() {
  * primeira visita e todos os cases apareceriam com zero visualizacoes.
  * O snippet do index.html desliga o envio automatico e a contagem inteira
  * acontece aqui, inclusive a da primeira carga.
+ *
+ * A guarda MEDINDO impede que sessao de desenvolvimento em localhost entre na
+ * propriedade. Ver o comentario em analytics.ts.
  */
 function usePageView() {
   const location = useLocation();
 
   useEffect(() => {
+    if (!MEDINDO) return;
     if (typeof window.gtag !== "function") return;
     window.gtag("event", "page_view", {
       page_path: location.pathname + location.search,
