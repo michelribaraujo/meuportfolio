@@ -468,7 +468,7 @@ export default function DiscoveryOrbit() {
           color: "#7c82ae",
         }}
       >
-        ✦ Processo de Discovery
+        ✦ 04 — Processo de Discovery
       </p>
       <h2
         className="mt-4 text-3xl sm:text-4xl 2xl:text-5xl leading-tight"
@@ -478,9 +478,8 @@ export default function DiscoveryOrbit() {
           color: "#f2ede8",
         }}
       >
-        Do caos à{" "}
         <em className="not-italic text-primary">
-          decisão fundamentada.
+          Suposição não é diagnóstico.
         </em>
       </h2>
       <p
@@ -491,8 +490,8 @@ export default function DiscoveryOrbit() {
           color: "#8f8bab",
         }}
       >
-        Seis etapas que transformam ambiguidade em direção.
-        {isMobile ? " Deslize para percorrer." : " Passe o mouse por uma delas para abrir."}
+        Seis etapas para transformar suposição em evidência.
+        {isMobile ? " Deslize para escolher uma etapa e ver a prova dela." : " Escolha uma etapa na órbita para ver a prova dela."}
       </p>
     </div>
   );

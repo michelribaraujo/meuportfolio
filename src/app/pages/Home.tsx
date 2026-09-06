@@ -98,7 +98,7 @@ const facts = [
   {
     icon: Cpu,
     label:
-      "Falo a língua da Engenharia — sem perder o foco no usuário",
+      "Falo a língua da Engenharia, sem perder o foco no usuário",
   },
   {
     icon: Sparkles,
@@ -3030,7 +3030,7 @@ export default function Home() {
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             <IconComet size={12} className="opacity-70" />
-            Disponível para contratação
+            Disponível para freelancer
           </motion.div>
 
           <div className="grid grid-cols-12 gap-8 items-start">
@@ -3072,13 +3072,16 @@ export default function Home() {
                 variants={fadeUp}
                 className="text-muted-foreground font-light max-w-lg leading-relaxed mb-10"
               >
-                9 anos traduzindo caos em clareza — de{" "}
+                9 anos em tecnologia, 7 deles desenhando produto
+                na{" "}
                 <span className="font-medium text-foreground">
-                  Globo, Netflix e Globoplay
+                  Globo, na Netflix, Claro, no Globoplay
                 </span>{" "}
-                até squads de IA. Com perfil híbrido de designer
-                + PM + dev-aware, entrego soluções que realmente
-                saem do papel.
+                e outras empresas atendidas. Hoje trabalho com
+                IA. Sou designer, mas também faço gestão de
+                produto e leio o código do projeto, então
+                participo da decisão antes dela virar tela e
+                continuo acompanhando as métricas após.
               </motion.p>
               <motion.div
                 variants={fadeUp}
@@ -3151,7 +3154,7 @@ export default function Home() {
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
             <IconConstellation size={14} className="shrink-0" />
-            Cases Selecionados
+            01 — Cases Selecionados
           </h2>
           <div className="h-px flex-1 bg-border" />
         </motion.div>
@@ -3220,7 +3223,7 @@ export default function Home() {
                 style={{ fontFamily: "'DM Mono', monospace" }}
               >
                 <BookOpen size={12} className="shrink-0" />{" "}
-                Sobre
+                02 — Sobre
               </p>
               <h3
                 className="text-3xl lg:text-4xl 2xl:text-5xl font-bold leading-tight mb-6"
@@ -3228,27 +3231,29 @@ export default function Home() {
                   fontFamily: "'Playfair Display', serif",
                 }}
               >
-                Design é a arte de
+                Aprendi a programar
                 <br />
-                <em>simplificar o caos.</em>
+                <em>antes de aprender a desenhar.</em>
               </h3>
               <p className="text-muted-foreground font-light leading-relaxed mb-4">
-                Comecei em Sistemas de Informação porque sempre
-                quis entender como as coisas funcionam por
-                dentro. Mas foi no design que descobri que
-                tecnologia sem empatia é só código solto.
+                Não consigo desenhar uma tela sem perguntar por
+                que ela existe. Isso me torna chato na reunião
+                de produto, e é exatamente por isso que me
+                chamam para ela.
               </p>
               <p className="text-muted-foreground font-light leading-relaxed mb-4">
-                Hoje trabalho na interseção entre produto,
-                design e engenharia — um espaço raro onde
-                consigo fazer produtos que são tecnicamente
-                viáveis, visualmente coerentes e, acima de tudo,
-                úteis para pessoas de verdade.
+                Não sou o designer que recebe o problema pronto,
+                nem o PM que terceiriza a tela. Sou product
+                designer, e vim de Sistemas de Informação: sei o
+                que custa caro implementar antes de propor, e
+                não aceito resolver no técnico o que é problema
+                de decisão.
               </p>
               <p className="text-muted-foreground font-light leading-relaxed">
-                Quando não estou no Figma, provavelmente estou
-                defendendo por que a jornada do usuário importa
-                mais do que a tela perfeita. ☕
+                Quando o discovery mostra que a solução pedida é
+                a errada, meu trabalho é dizer isso antes do
+                sprint começar. Depois do lançamento não é
+                diagnóstico, é autópsia.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -3280,16 +3285,16 @@ export default function Home() {
               <div className="space-y-3">
                 {[
                   {
-                    company: "[Empresa] · NDA",
+                    company: "Confidencial · Ecossistema Digital",
                     role: "Product Designer Sênior & PM",
                     period: "2024 – 2026",
-                    note: "Liderou squad técnica de 6 pessoas (IA e SRE) num ecossistema digital do zero.",
+                    note: "Liderei squad técnica de 6 pessoas (IA e SRE) num ecossistema digital do zero.",
                     color: "#ff6b47",
                   },
                   {
                     company: "Take Blip",
-                    role: "UX Designer Sênior",
-                    period: "2021 – 2023",
+                    role: "UX Designer",
+                    period: "2021 – 2024",
                     note: "Projetos para Netflix e Globoplay. Discovery, pesquisa de campo, mentoria de designers.",
                     color: "#e50914",
                   },
@@ -3297,7 +3302,7 @@ export default function Home() {
                     company: "GetInfo",
                     role: "UX/UI Designer Pleno",
                     period: "2020 – 2021",
-                    note: "Criou Design System do zero, reduzindo atrito no desenvolvimento de novas features.",
+                    note: "Criei o Design System do zero, reduzindo atrito no desenvolvimento de novas features.",
                     color: "#60a5fa",
                   },
                 ].map((exp, i) => (
@@ -3355,7 +3360,7 @@ export default function Home() {
               style={{ fontFamily: "'DM Mono', monospace" }}
             >
               <Lightbulb size={12} className="shrink-0" />
-              No meu toolkit
+              03 — No meu toolkit
             </p>
             <div className="flex flex-wrap gap-2">
               {[
