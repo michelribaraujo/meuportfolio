@@ -39,7 +39,7 @@ const cases = [
     brand: "netflix" as const,
   },
   {
-    slug: "Confidencial",
+    slug: "confidencial",
     num: "05",
     title: "Discovery como Escudo de Governança",
     subtitle: "Confidencial · Ecossistema Digital",

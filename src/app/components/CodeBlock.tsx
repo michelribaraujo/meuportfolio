@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Check, Copy } from "lucide-react";
+import { trackEvent } from "../analytics";
 
 /**
  * Bloco de codigo copiavel.
@@ -33,12 +34,10 @@ export default function CodeBlock({
     }
     setCopiado(true);
     window.setTimeout(() => setCopiado(false), 2000);
-    if (typeof window.gtag === "function") {
-      window.gtag("event", "copiar_prompt", {
-        prompt_id: eventId,
-        caracteres: content.length,
-      });
-    }
+    trackEvent("copiar_prompt", {
+      prompt_id: eventId,
+      caracteres: content.length,
+    });
   }
 
   return (

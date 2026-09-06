@@ -70,12 +70,19 @@ const NOT_FOUND: RouteMeta = {
     "Esta página não existe no portfólio de Michel Araujo. Volte para a home para ver os cases.",
 };
 
-/** Remove a barra final para que /case/zapflix e /case/zapflix/ sejam a mesma rota. */
+/**
+ * Remove a barra final e baixa a caixa.
+ *
+ * A barra final existe para que /case/zapflix e /case/zapflix/ sejam a mesma
+ * rota. A caixa existe porque o react-router casa rota sem diferenciar
+ * maiuscula de minuscula: /case/Confidencial renderiza o case normalmente,
+ * mas o lookup exato aqui nao achava a chave e devolvia o titulo de 404 para
+ * uma pagina que existe. Isso vazava para o Google e para o GA4.
+ */
 function normalize(pathname: string): string {
-  if (pathname.length > 1 && pathname.endsWith("/")) {
-    return pathname.slice(0, -1);
-  }
-  return pathname;
+  const semBarra =
+    pathname.length > 1 && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+  return semBarra.toLowerCase();
 }
 
 export function metaForPath(pathname: string): RouteMeta & { canonical: string } {

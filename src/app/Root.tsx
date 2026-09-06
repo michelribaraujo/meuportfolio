@@ -103,7 +103,9 @@ function useCaseView() {
   const location = useLocation();
   useEffect(() => {
     if (!location.pathname.startsWith("/case/")) return;
-    trackEvent("ver_case", { case_slug: location.pathname.replace("/case/", "") });
+    trackEvent("ver_case", {
+      case_slug: location.pathname.replace("/case/", "").toLowerCase(),
+    });
   }, [location.pathname]);
 }
 

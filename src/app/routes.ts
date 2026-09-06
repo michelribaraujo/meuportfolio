@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, redirect } from "react-router";
 import Root from "./Root";
 import Home from "./pages/Home";
 import CaseZapflix from "./pages/CaseZapflix";
@@ -18,6 +18,13 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: Home },
       { path: "case/confidencial", Component: CaseCIEE },
+      // Link antigo, ainda em circulacao: aparecia no GA como 404. Redireciona
+      // em vez de perder a visita. Como o arquivo e .ts e nao .tsx, o redirect
+      // vai pelo loader e nao por <Navigate>, que exigiria JSX.
+      {
+        path: "case/ciee",
+        loader: () => redirect("/case/confidencial"),
+      },
       { path: "case/zapflix", Component: CaseZapflix },
       { path: "case/design-thinking", Component: CaseDesignThinking },
       { path: "case/discovery-flow", Component: CaseDiscoveryFlow },
