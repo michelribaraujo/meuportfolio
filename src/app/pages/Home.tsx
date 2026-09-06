@@ -2758,30 +2758,41 @@ const fadeUp = {
 };
 
 /* ─────────────────────────────────────────────────────────────
-   Linhas de exemplo da tabela de Gestão de Hipóteses
+   Hipóteses REAIS do ZapFlix, na fase 01 do discovery.
+
+   Esta tabela já foi ilustrativa, com dados inventados e um
+   banner avisando disso. Portfólio não exibe dado fictício com
+   aviso: ou é real, ou a seção não existe. As três linhas abaixo
+   são o que de fato foi investigado, e a procedência fica
+   declarada no rodapé da tabela.
 ───────────────────────────────────────────────────────────── */
 const hypothesisRows = [
   {
     hypothesis:
-      "O usuário não completa o cadastro por falta de confiança na plataforma",
-    question: "O que causa abandono no passo 3?",
-    method: "Entrevistas + Session Recording",
+      "O registro que funcionava com a geração Z serviria para o público novo",
+    question:
+      "Como a Joana escreve quando ninguém está pedindo?",
+    method:
+      "Netnografia em perfis reais do Facebook e do Pinterest",
     evidence:
-      "78% citaram medo de spam como barreira principal",
+      "Registros opostos em vocabulário, abreviação, pontuação e emoji",
   },
   {
     hypothesis:
-      "A demora no tempo de resposta aumenta o churn no primeiro mês",
-    question: "Qual é a correlação entre SLA e retenção?",
-    method: "Analytics + Cohort Analysis",
-    evidence: "Resposta > 24h = 2.3× mais churn confirmado",
+      "Dá para reconhecer o público novo só olhando quem responde",
+    question:
+      "A pessoa que eu abordo na rua é mesmo a persona?",
+    method: "Perguntas de screening antes de cada entrevista",
+    evidence:
+      "Sem filtro, o dado sai convincente e errado. Com filtro, acaso virou amostra",
   },
   {
     hypothesis:
-      "Usuários power não usam a feature X por desconhecimento",
-    question: "A feature X é visível no fluxo atual?",
-    method: "Heuristic Evaluation + Tree Test",
-    evidence: "Apenas 12% encontraram sem ajuda externa",
+      "Alcance grande no lançamento significa que o público novo chegou",
+    question: "Quem exatamente veio no pico?",
+    method: "Assinatura de escrita + origem de campanha",
+    evidence:
+      "1 mi na primeira semana, vindo de TikTok e Twitter. Público de figurinhas, não a persona",
   },
 ];
 
@@ -2839,7 +2850,7 @@ function HypothesisTable() {
                   className="text-xs uppercase tracking-widest text-muted-foreground"
                   style={{ fontFamily: "'DM Mono', monospace" }}
                 >
-                  Metodologia · Fase 02 — Entender
+                  ZapFlix · A prova da fase 01 · Entender
                 </span>
               </div>
               <h4
@@ -2853,7 +2864,7 @@ function HypothesisTable() {
                   style={{ color: "#7C3AED" }}
                   className="shrink-0"
                 />
-                Gestão de Hipóteses em prática
+                As hipóteses que viraram a virada de público
               </h4>
             </div>
             <div className="sm:ml-auto flex items-center gap-2 flex-wrap">
@@ -2887,32 +2898,6 @@ function HypothesisTable() {
                 ),
               )}
             </div>
-          </div>
-
-          {/* Dados fictícios notice */}
-          <div
-            className="px-5 sm:px-8 py-3 border-b border-border flex items-center gap-2.5"
-            style={{ background: "rgba(245,158,11,0.06)" }}
-          >
-            <span
-              className="text-sm select-none"
-              style={{ fontFamily: "system-ui" }}
-            >
-              ⚠
-            </span>
-            <p
-              className="text-xs text-muted-foreground"
-              style={{ fontFamily: "'DM Mono', monospace" }}
-            >
-              <span
-                className="font-semibold"
-                style={{ color: "#f59e0b" }}
-              >
-                Dados fictícios
-              </span>{" "}
-              — esta tabela usa exemplos ilustrativos para
-              demonstrar a didática da metodologia.
-            </p>
           </div>
 
           <div className="overflow-x-auto">
@@ -3003,8 +2988,9 @@ function HypothesisTable() {
               className="text-xs text-muted-foreground"
               style={{ fontFamily: "'DM Mono', monospace" }}
             >
-              ✦ Cada hipótese tem dono, prazo e critério de
-              validação — antes de qualquer sprint começar.
+              ✦ Hipóteses reais do ZapFlix, produto em que atuei
+              como designer no time da Take Blip. Números
+              recuperados de memória, sem acesso a dashboard.
             </span>
           </div>
         </motion.div>
@@ -3362,36 +3348,69 @@ export default function Home() {
               <Lightbulb size={12} className="shrink-0" />
               03 — No meu toolkit
             </p>
-            <div className="flex flex-wrap gap-2">
+            {/* Três colunas rotuladas em vez de uma lista chapada.
+                A lista sem rótulo afirmava o perfil híbrido; a coluna
+                mostra. Design vem primeiro porque é a cadeira dele:
+                Produto e Técnico sustentam, não competem. */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6">
               {[
-                "Figma",
-                "Design Systems",
-                "UX Research",
-                "Product Discovery",
-                "Service Blueprint",
-                "Arquitetura de IA",
-                "Power BI",
-                "Miro",
-                "Agile/Scrum",
-                "OKRs",
-                "Handoff Técnico",
-                "APIs",
-                "Visão de Front-end",
-                "Facilitação de Workshops",
-              ].map((skill, i) => (
-                <motion.span
-                  key={skill}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                {
+                  label: "Design",
+                  skills: [
+                    "UX Research",
+                    "Design Systems",
+                    "Service Blueprint",
+                    "Facilitação de Workshops",
+                    "Figma",
+                    "Miro",
+                  ],
+                },
+                {
+                  label: "Produto",
+                  skills: [
+                    "Product Discovery",
+                    "OKRs",
+                    "Agile/Scrum",
+                    "Power BI",
+                  ],
+                },
+                {
+                  label: "Técnico",
+                  skills: [
+                    "Arquitetura de IA",
+                    "APIs",
+                    "Visão de Front-end",
+                    "Handoff Técnico",
+                  ],
+                },
+              ].map((coluna, ci) => (
+                <motion.div
+                  key={coluna.label}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{
-                    duration: 0.3,
-                    delay: i * 0.03,
-                  }}
-                  className="text-xs text-muted-foreground border border-border bg-card px-3 py-1.5 rounded-full hover:border-primary/30 hover:text-foreground transition-colors"
+                  transition={{ duration: 0.4, delay: ci * 0.08 }}
                 >
-                  {skill}
-                </motion.span>
+                  <p
+                    className="text-xs uppercase tracking-widest text-primary mb-4"
+                    style={{
+                      fontFamily: "'DM Mono', monospace",
+                      letterSpacing: "0.14em",
+                    }}
+                  >
+                    {coluna.label}
+                  </p>
+                  <ul className="flex flex-col gap-2.5">
+                    {coluna.skills.map((skill) => (
+                      <li
+                        key={skill}
+                        className="text-sm text-muted-foreground"
+                      >
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -3417,10 +3436,10 @@ export default function Home() {
             className="text-4xl lg:text-5xl 2xl:text-6xl font-black mb-6 leading-tight"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Bora criar algo
+            Me conta o problema
             <br />
             <em className="not-italic text-primary">
-              incrível juntos?
+              que você quer resolver?
             </em>
           </h2>
           <p className="text-muted-foreground font-light max-w-sm mx-auto mb-10 leading-relaxed">

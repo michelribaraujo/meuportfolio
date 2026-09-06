@@ -718,11 +718,15 @@ export default function Root() {
       <footer className="border-t border-border mt-24">
         <div className="max-w-6xl 2xl:max-w-[96rem] mx-auto px-4 sm:px-8 2xl:px-16 py-8 sm:py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <p className="font-semibold text-sm">
-              Michel Ribeiro Araujo
+            <p className="font-semibold text-sm lowercase">
+              michel araujo
+            </p>
+            <p className="text-xs text-muted-foreground mt-1 lowercase">
+              product designer sênior
             </p>
             <p className="text-xs text-muted-foreground mt-1">
-              Product Designer Sênior · Belo Horizonte, Brasil
+              Belo Horizonte, MG · Este site roda em
+              infraestrutura própria
             </p>
           </div>
           <div className="flex gap-6 flex-wrap justify-center">
