@@ -64,6 +64,19 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 };
 
+/**
+ * Rotas que existem no site mas ainda nao devem aparecer na busca.
+ *
+ * Um case em construcao continua acessivel por link direto (para revisar e
+ * mostrar para alguem), mas sai do sitemap e recebe `noindex`. Sem isso o
+ * Google indexa a versao pela metade e depois demora para trocar pelo texto
+ * final; primeira impressao no resultado de busca so acontece uma vez.
+ *
+ * PARA PUBLICAR: tire a rota daqui E devolva a linha dela em
+ * public/sitemap.xml. As duas coisas andam juntas.
+ */
+const RASCUNHOS = new Set<string>(["/case/jobiee"]);
+
 const NOT_FOUND: RouteMeta = {
   title: "Página não encontrada · Michel Araujo",
   description:
@@ -85,10 +98,15 @@ function normalize(pathname: string): string {
   return semBarra.toLowerCase();
 }
 
-export function metaForPath(pathname: string): RouteMeta & { canonical: string } {
+export function metaForPath(
+  pathname: string,
+): RouteMeta & { canonical: string; naoIndexar: boolean } {
   const path = normalize(pathname);
   const meta = ROUTE_META[path] ?? NOT_FOUND;
   // Rota desconhecida nao merece canonical proprio: aponta para a home.
   const canonical = ROUTE_META[path] ? `${SITE_URL}${path === "/" ? "/" : path}` : `${SITE_URL}/`;
-  return { ...meta, canonical };
+  // Rascunho e 404 saem da busca. O 404 ja saia via canonical para a home;
+  // o noindex torna explicito em vez de depender da interpretacao do Google.
+  const naoIndexar = RASCUNHOS.has(path) || !ROUTE_META[path];
+  return { ...meta, canonical, naoIndexar };
 }

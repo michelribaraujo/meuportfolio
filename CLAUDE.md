@@ -49,6 +49,11 @@ senão o deploy publica no lugar errado.
 Esquecer o `seo.ts` devolve o case ao título genérico, e ele volta a competir com os
 outros cases na busca como se fosse a mesma página.
 
+**Case ainda em construção:** entra normalmente nos três arquivos, menos o
+`sitemap.xml`, e o slug vai para o `Set` `RASCUNHOS` do `seo.ts`. A página continua
+aberta por link direto, mas sai da busca com `noindex`. **Para publicar, tire o slug
+do `RASCUNHOS` e devolva a linha no `sitemap.xml` — as duas coisas juntas.**
+
 ### 3. Derivado de imagem não entra no git
 
 A fonte fica em `src/imports/`. Os WebP são gerados no `prebuild` por

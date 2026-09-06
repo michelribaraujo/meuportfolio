@@ -23,6 +23,10 @@ function setMeta(attr: "name" | "property", key: string, value: string) {
   tag.setAttribute("content", value);
 }
 
+function removeMeta(attr: "name" | "property", key: string) {
+  document.head.querySelector(`meta[${attr}="${key}"]`)?.remove();
+}
+
 function setCanonical(href: string) {
   let link = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
   if (!link) {
@@ -63,6 +67,13 @@ function useDocumentMeta() {
     setMeta("name", "twitter:title", meta.title);
     setMeta("name", "twitter:description", meta.description);
     setCanonical(meta.canonical);
+    // A tag precisa sair ao trocar de rota: numa SPA o <head> e o mesmo o
+    // tempo todo, e um noindex esquecido tiraria o site inteiro da busca.
+    if (meta.naoIndexar) {
+      setMeta("name", "robots", "noindex, follow");
+    } else {
+      removeMeta("name", "robots");
+    }
   }, [location.pathname]);
 }
 
