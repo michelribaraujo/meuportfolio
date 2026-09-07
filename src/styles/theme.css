@@ -42,7 +42,11 @@
      texto sobre o fundo: 6,88 no claro e 8,36 no escuro, acima do AA de 4,5 */
   --feedback-warning: #92400e;
   --feedback-warning-bg: #fffceb;
-  --border: rgba(26, 21, 32, 0.08);
+  /* Hairline do modo claro. Vem de color/border/default do Cosmic Sky, que
+     no modo Light resolve slate/200 (#c8d2e1), opaco. Estava em
+     rgba(26, 21, 32, 0.08), quase preto translucido: nao era o mesmo valor
+     com outro nome, era outra cor. O Figma manda no desenho. */
+  --border: #c8d2e1;
   --input: #ede9e2;
   --input-background: #ede9e2;
   --switch-background: #ccc5bc;
@@ -61,7 +65,7 @@
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f7f5f0;
   --sidebar-accent-foreground: #1a1520;
-  --sidebar-border: rgba(26, 21, 32, 0.08);
+  --sidebar-border: #c8d2e1;
   --sidebar-ring: #ff6b47;
 }
 
