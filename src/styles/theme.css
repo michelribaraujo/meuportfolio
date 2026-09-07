@@ -38,6 +38,10 @@
   --accent-foreground: #ffffff;
   --destructive: #e5091f;
   --destructive-foreground: #ffffff;
+  /* feedback: espelha color/feedback/* da Cosmic Sky. Contraste medido do
+     texto sobre o fundo: 6,88 no claro e 8,36 no escuro, acima do AA de 4,5 */
+  --feedback-warning: #92400e;
+  --feedback-warning-bg: #fffceb;
   --border: rgba(26, 21, 32, 0.08);
   --input: #ede9e2;
   --input-background: #ede9e2;
@@ -92,6 +96,8 @@
   --accent-foreground: #ffffff;
   --destructive: #e5091f;
   --destructive-foreground: #ffffff;
+  --feedback-warning: #fbbf24;
+  --feedback-warning-bg: #462308;
   --border: rgba(160, 170, 240, 0.10);
   --input: #0c0c26;
   --input-background: #0c0c26;
@@ -131,6 +137,8 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-feedback-warning: var(--feedback-warning);
+  --color-feedback-warning-bg: var(--feedback-warning-bg);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-input-background: var(--input-background);
