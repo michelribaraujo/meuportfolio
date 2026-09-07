@@ -3,10 +3,65 @@ import { ArrowRight } from "lucide-react";
 import SectionHeader from "../components/SectionHeader";
 import NumberedCard from "../components/NumberedCard";
 import CodeBlock from "../components/CodeBlock";
+import DataTable, { type Coluna } from "../components/DataTable";
 import { PROMPT_MD, MEMORIA_MD } from "../content/promptMentorCarreira";
 
 const WA_URL =
   "https://wa.me/5531983545099?text=Ol%C3%A1%2C%20vim%20da%20p%C3%A1gina%20do%20prompt!";
+
+/**
+ * Conectores da tabela da secao 05.
+ *
+ * A ordem nao e alfabetica: e por necessidade. O obrigatorio vem primeiro,
+ * o inexistente por ultimo, porque e o que mais gera duvida.
+ */
+const COLUNAS_CONECTORES: Coluna[] = [
+  { titulo: "Conector", min: "11rem", max: "15rem", destaque: true },
+  { titulo: "Para quê", min: "11rem", max: "14rem" },
+  // 9.5rem cabe "Se for o seu caso" e "Recomendado" em uma linha so: rotulo
+  // curto quebrando em duas linhas e defeito, nao economia de espaco
+  { titulo: "Obrigatório", min: "9.5rem", max: "11rem" },
+  { titulo: "Sem ele", min: "16rem" },
+];
+
+const CONECTORES: string[][] = [
+  [
+    "Notion ou Google Docs, com escrita",
+    "A memória",
+    "Sim",
+    "O agente esquece tudo a cada conversa e vira um chat comum",
+  ],
+  [
+    "Google Drive",
+    "Ler seu currículo",
+    "Recomendado",
+    "Você cola o texto do currículo na mão toda vez",
+  ],
+  [
+    "Figma",
+    "Portfólio de designer",
+    "Se for o seu caso",
+    "Você descreve as telas ou manda print",
+  ],
+  [
+    "GitHub",
+    "Portfólio em código",
+    "Se for o seu caso",
+    "Você cola trechos de código na mão",
+  ],
+  [
+    "Busca web",
+    "Vagas, empresas, salário",
+    "Recomendado",
+    "Ele responde com dado velho e não avisa que é velho",
+  ],
+  [
+    "LinkedIn",
+    "Ler o seu perfil",
+    "Não existe",
+    "Você cola headline, Sobre e experiências uma vez só. Nenhuma IA lê ou publica no seu LinkedIn sozinha",
+  ],
+];
 
 const ARTEFATOS = [
   {
@@ -177,9 +232,28 @@ export default function PromptMentorCarreira() {
         </p>
       </section>
 
-      {/* 05 — Como usar */}
+      {/* 05 — O que ligar */}
+      <section id="o-que-ligar" className="py-16 sm:py-20 flex flex-col gap-8 scroll-mt-24">
+        <SectionHeader
+          eyebrow="05 — O que ligar"
+          title="Um acesso é obrigatório. O resto é conforto."
+          description="MCP é o padrão que deixa a IA usar ferramenta de fora do chat. No Claude fica em Configurações, Conectores. Comece pela memória e adicione o resto quando sentir falta."
+        />
+        <DataTable
+          colunas={COLUNAS_CONECTORES}
+          linhas={CONECTORES}
+          legenda="Conectores necessários para rodar o agente, o que cada um faz e o que acontece sem ele"
+        />
+        <p className="text-sm text-muted-foreground max-w-3xl">
+          Leitura sem escrita não serve para a memória. É o erro mais comum: o
+          agente lê bonito na abertura e nunca grava nada no fim, e aí a memória
+          congela no primeiro dia.
+        </p>
+      </section>
+
+      {/* 06 — Como usar */}
       <section className="py-16 sm:py-20 flex flex-col gap-8">
-        <SectionHeader eyebrow="05 — Como usar" title="Quatro passos." />
+        <SectionHeader eyebrow="06 — Como usar" title="Quatro passos." />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PASSOS.map((p) => (
             <NumberedCard key={p.n} number={p.n} title={p.t}>
@@ -189,10 +263,10 @@ export default function PromptMentorCarreira() {
         </div>
       </section>
 
-      {/* 06 — O que não esperar */}
+      {/* 07 — O que não esperar */}
       <section className="py-16 sm:py-20 flex flex-col gap-4">
         <SectionHeader
-          eyebrow="06 — O que não esperar"
+          eyebrow="07 — O que não esperar"
           title="Ele não consegue vaga pra você."
           description="Não escreve o seu case sozinho e não sabe nada que você não contar. A parte difícil continua sendo lembrar do que você fez e ter coragem de contar direito. O agente só garante que nada disso se perca no caminho."
         />

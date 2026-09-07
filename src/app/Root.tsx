@@ -23,10 +23,6 @@ function setMeta(attr: "name" | "property", key: string, value: string) {
   tag.setAttribute("content", value);
 }
 
-function removeMeta(attr: "name" | "property", key: string) {
-  document.head.querySelector(`meta[${attr}="${key}"]`)?.remove();
-}
-
 function setCanonical(href: string) {
   let link = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
   if (!link) {
@@ -72,7 +68,9 @@ function useDocumentMeta() {
     if (meta.naoIndexar) {
       setMeta("name", "robots", "noindex, follow");
     } else {
-      removeMeta("name", "robots");
+      // reescreve em vez de remover: o index.html declara "index, follow" de
+      // proposito, e apagar a tag deixava o <head> sem ela sem nenhum ganho
+      setMeta("name", "robots", "index, follow");
     }
   }, [location.pathname]);
 }
