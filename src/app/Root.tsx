@@ -480,6 +480,16 @@ const CLUSTERS: Cluster[] = [
   document height, so they enter and leave the viewport as the user scrolls.
   Dark mode: white stars + indigo constellation lines.
   Light mode: faint warm dust-mote dots + sepia constellation traces.
+
+  As duas camadas levam overflow-clip porque a constelacao e posicionada com
+  left em porcentagem mais translate(-50%): as de percentual baixo saem pela
+  esquerda, ate -19px, e empurram a largura do documento. O efeito era 1px de
+  rolagem horizontal em toda pagina, 5px na home, com a pagina tremendo de
+  lado no celular. O Figma ja recorta o frame Background, entao isto e o
+  codigo passando a fazer o que o desenho sempre fez: nada muda de lugar.
+
+  overflow-clip e nao overflow-hidden de proposito: clip nao cria container
+  de rolagem e nao interfere no sticky do header.
 */
 function SpaceBackground() {
   const darkStars = useMemo(() => {
@@ -565,7 +575,7 @@ function SpaceBackground() {
     <>
       {/* Dark mode layer */}
       <div
-        className="absolute inset-0 pointer-events-none select-none hidden dark:block"
+        className="absolute inset-0 overflow-clip pointer-events-none select-none hidden dark:block"
         style={{ zIndex: -1 }}
         aria-hidden
       >
@@ -587,7 +597,7 @@ function SpaceBackground() {
 
       {/* Light mode layer */}
       <div
-        className="absolute inset-0 pointer-events-none select-none block dark:hidden"
+        className="absolute inset-0 overflow-clip pointer-events-none select-none block dark:hidden"
         style={{ zIndex: -1 }}
         aria-hidden
       >

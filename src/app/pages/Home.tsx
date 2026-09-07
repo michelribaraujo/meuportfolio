@@ -974,8 +974,14 @@ function ProfileCard() {
       }}
     >
       {/* Ambient glow */}
+      {/*
+        inset-0 no mobile porque -inset-3 estende 12px para fora do pai e, em
+        375px, empurrava a largura do documento para 380: a home tremia de lado
+        no celular. O desfoque continua vazando visualmente, so nao vaza a
+        caixa. Acima de sm o -inset-3 volta, porque ali sobra margem.
+      */}
       <div
-        className="absolute -inset-3 rounded-3xl opacity-40 blur-2xl pointer-events-none"
+        className="absolute inset-0 sm:-inset-3 rounded-3xl opacity-40 blur-2xl pointer-events-none"
         style={{
           background:
             "radial-gradient(ellipse at 50% 20%, rgba(124,58,237,0.25) 0%, rgba(37,99,235,0.13) 55%, transparent 80%)",

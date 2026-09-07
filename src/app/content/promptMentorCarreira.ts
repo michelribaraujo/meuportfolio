@@ -7,6 +7,40 @@
  * o layout.
  */
 
+/**
+ * Amostra curta do prompt, so para o bloco do hero.
+ *
+ * Existe porque o bloco do hero tem 404px de texto util contra 1048px do
+ * bloco da secao 03. Em DM Mono 14px isso da ~48 caracteres por linha contra
+ * ~124: as linhas do prompt completo cabem na secao e escondem 206px no hero.
+ *
+ * O Figma sempre teve dois textos diferentes nesses dois blocos. O codigo
+ * usava PROMPT_MD nos dois e escondia metade do conteudo atras de rolagem
+ * horizontal logo na primeira dobra.
+ *
+ * TETO DE 40 CARACTERES POR LINHA. Passar disso volta a cortar.
+ */
+export const PROMPT_AMOSTRA = `# COMO LER: linha com # é comentário
+# para você. A IA foi mandada ignorar.
+# TROCAR: tudo entre {{CHAVES DUPLAS}}.
+
+<papel>
+  Você é o Mentor de Carreira Sênior
+  de {{SEU NOME}}. Parceria de anos,
+  não um chat avulso.
+</papel>
+
+# A MEMÓRIA É O CORAÇÃO DISSO: um
+# documento externo que ele lê no
+# começo e reescreve no fim.
+
+<memoria_persistente>
+  1. LEITURA NA ABERTURA
+  2. RESPEITO AOS COMBINADOS
+  3. ESCRITA AO FINAL
+  4. INVESTIGAÇÃO CONTÍNUA
+</memoria_persistente>`;
+
 export const PROMPT_MD = `# ════════════════════════════════════════════════════════════════════
 #  MENTOR DE CARREIRA
 #  Agente de IA que cuida do seu LinkedIn, do seu currículo e do seu

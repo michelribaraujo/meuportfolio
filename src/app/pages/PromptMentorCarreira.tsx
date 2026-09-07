@@ -4,7 +4,11 @@ import SectionHeader from "../components/SectionHeader";
 import NumberedCard from "../components/NumberedCard";
 import CodeBlock from "../components/CodeBlock";
 import DataTable, { type Coluna } from "../components/DataTable";
-import { PROMPT_MD, MEMORIA_MD } from "../content/promptMentorCarreira";
+import {
+  PROMPT_AMOSTRA,
+  PROMPT_MD,
+  MEMORIA_MD,
+} from "../content/promptMentorCarreira";
 
 const WA_URL =
   "https://wa.me/5531983545099?text=Ol%C3%A1%2C%20vim%20da%20p%C3%A1gina%20do%20prompt!";
@@ -162,9 +166,10 @@ export default function PromptMentorCarreira() {
         </div>
         <CodeBlock
           filename="mentor-de-carreira.md"
-          content={PROMPT_MD}
+          content={PROMPT_AMOSTRA}
+          copyContent={PROMPT_MD}
           eventId="mentor-de-carreiras-hero"
-          maxHeight="20rem"
+          maxHeight="34rem"
         />
       </section>
 

@@ -16,11 +16,19 @@ import { trackEvent } from "../analytics";
 export default function CodeBlock({
   filename,
   content,
+  copyContent,
   eventId,
   maxHeight = "38rem",
 }: {
   filename: string;
+  /** O que aparece na tela. */
   content: string;
+  /**
+   * O que vai para a area de transferencia, quando for diferente do que
+   * aparece. O bloco do hero mostra uma amostra curta porque tem 404px de
+   * largura util, mas quem clica em Copiar espera levar o prompt inteiro.
+   */
+  copyContent?: string;
   eventId: string;
   maxHeight?: string;
 }) {
@@ -28,7 +36,7 @@ export default function CodeBlock({
 
   async function copiar() {
     try {
-      await navigator.clipboard.writeText(content);
+      await navigator.clipboard.writeText(copyContent ?? content);
     } catch {
       return;
     }
@@ -36,7 +44,7 @@ export default function CodeBlock({
     window.setTimeout(() => setCopiado(false), 2000);
     trackEvent("copiar_prompt", {
       prompt_id: eventId,
-      caracteres: content.length,
+      caracteres: (copyContent ?? content).length,
     });
   }
 
