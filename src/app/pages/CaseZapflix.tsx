@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
+import type { CSSProperties } from "react";
 
 const stickers = [
   { title: "Stranger Things", text: "Bom dia! Que sua semana seja incrível 🌟" },
@@ -71,7 +72,10 @@ export default function CaseZapflix() {
       </section>
 
       {/* Navigation tabs */}
-      <nav className="sticky top-[53px] sm:top-[65px] z-40 bg-background/95 backdrop-blur-sm border-b border-border max-w-full">
+      <nav
+        className="sticky top-[53px] sm:top-[65px] z-40 bg-background/95 backdrop-blur-sm border-b border-border max-w-full case-tabs"
+        style={{ "--tab-accent": "#e50914" } as CSSProperties}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-8">
           <div className="flex overflow-x-auto">
             {sections.map((s) => (

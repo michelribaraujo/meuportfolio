@@ -188,4 +188,55 @@
   label { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
   button { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
   input { font-size: var(--text-base); font-weight: var(--font-weight-normal); line-height: 1.5; }
+
+  /* Regra do design system: tudo que e clicavel mostra a mao.
+     O <button> nativo usa cursor: default, entao sem isto nada no site
+     indicava que era clicavel. Fica em @layer base de proposito: qualquer
+     utilitario de cursor aplicado num componente continua vencendo. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [role="tab"],
+  a[href],
+  summary,
+  label[for],
+  select {
+    cursor: pointer;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Estados da navegacao de capitulo dos cases.
+
+   Fora de @layer de proposito: as classes do Tailwind sao utilitarios, e
+   utilitario vence qualquer camada. CSS sem camada vence utilitario, que e o
+   unico jeito de sobrepor o border-transparent da aba inativa sem !important.
+
+   A cor nao esta cravada aqui: cada case injeta a sua em --tab-accent, no
+   proprio <nav>. Os dois patamares vem do Cosmic Sky: accent/border-30 no
+   hover e accent/tint-12 no press.
+
+   Anima so cor. Layout animado custa reflow, e a aba e sticky.
+   180ms na entrada e 120ms na confirmacao: hover e convite e pode respirar,
+   press e resposta e precisa ser imediato.
+   --------------------------------------------------------------------------- */
+.case-tabs button {
+  transition:
+    color 180ms ease-out,
+    border-color 180ms ease-out,
+    background-color 180ms ease-out;
+}
+
+.case-tabs button.border-transparent:hover {
+  border-bottom-color: color-mix(in srgb, var(--tab-accent) 30%, transparent);
+}
+
+.case-tabs button:active {
+  background-color: color-mix(in srgb, var(--tab-accent) 12%, transparent);
+  transition-duration: 120ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-tabs button {
+    transition: none;
+  }
 }

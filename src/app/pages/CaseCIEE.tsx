@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { ArrowRight, Shield, AlertTriangle, Map, TrendingUp } from "lucide-react";
+import type { CSSProperties } from "react";
 
 const ACCENT = "#6366f1";
 
@@ -94,7 +95,10 @@ export default function CaseCIEE() {
       </section>
 
       {/* ── Navigation tabs ── */}
-      <nav className="sticky top-[57px] sm:top-[65px] z-40 bg-background/95 backdrop-blur-sm border-b border-border max-w-full">
+      <nav
+        className="sticky top-[57px] sm:top-[65px] z-40 bg-background/95 backdrop-blur-sm border-b border-border max-w-full case-tabs"
+        style={{ "--tab-accent": ACCENT } as CSSProperties}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-8">
           <div className="flex overflow-x-auto">
             {sections.map((s) => (

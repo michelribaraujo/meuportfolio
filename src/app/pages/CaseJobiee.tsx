@@ -10,6 +10,7 @@ import bp768 from "../../imports/jobiee/bp-768.png";
 import bp1080 from "../../imports/jobiee/bp-1080.png";
 import sitemap from "../../imports/jobiee/sitemap.png";
 import redlines from "../../imports/jobiee/redlines.png";
+import type { CSSProperties } from "react";
 
 // O mural existe para provar escala. Miniatura pequena de proposito: ninguem
 // vai ler as telas, todo mundo vai entender o volume. Trocar por telas reais
@@ -167,7 +168,10 @@ export default function CaseJobiee() {
       </section>
 
       {/* Navegacao por capitulo */}
-      <nav className="sticky top-[53px] sm:top-[65px] z-40 bg-background/95 backdrop-blur-sm border-b border-border max-w-full">
+      <nav
+        className="sticky top-[53px] sm:top-[65px] z-40 bg-background/95 backdrop-blur-sm border-b border-border max-w-full case-tabs"
+        style={{ "--tab-accent": ACCENT } as CSSProperties}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-8">
           <div className="flex overflow-x-auto">
             {sections.map((s) => (

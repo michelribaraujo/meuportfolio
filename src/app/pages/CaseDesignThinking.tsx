@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { CSSProperties } from "react";
 
 type Section = "contexto" | "solucao" | "estagios" | "resultado";
 
@@ -62,7 +63,10 @@ export default function CaseDesignThinking() {
       </section>
 
       {/* Navigation */}
-      <nav className="max-w-6xl mx-auto px-4 sm:px-8 border-b border-border">
+      <nav
+        className="max-w-6xl mx-auto px-4 sm:px-8 border-b border-border case-tabs"
+        style={{ "--tab-accent": "#60a5fa" } as CSSProperties}
+      >
         <div className="flex overflow-x-auto">
           {sections.map((s) => (
             <button
