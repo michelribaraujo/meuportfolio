@@ -435,8 +435,10 @@ export default function CaseZapflix() {
             <p className="text-xs text-muted-foreground mb-1" style={{ fontFamily: "'DM Mono', monospace" }}>
               Próximo case
             </p>
+            {/* Aponta direto para o slug atual: /case/ciee e so um redirect legado, */}
+            {/* e passar por ele custa um hop e some do relatorio de navegacao do GA4. */}
             <Link
-              to="/case/ciee"
+              to="/case/confidencial"
               className="flex items-center gap-2 font-semibold hover:opacity-70 transition-opacity text-primary"
             >
               Discovery como Escudo de Governança <ArrowRight size={14} />
