@@ -98,7 +98,11 @@
   --destructive-foreground: #ffffff;
   --feedback-warning: #fbbf24;
   --feedback-warning-bg: #462308;
-  --border: rgba(160, 170, 240, 0.10);
+  /* Hairline do modo escuro. Vem de color/border/default do Cosmic Sky,
+     que resolve portfolio/hairline-12. Estava em 0.10, que e o
+     color/border/glass: token de vidro, nao de contorno. O Figma manda no
+     desenho, entao o codigo sobe para 0.12. */
+  --border: rgba(160, 170, 240, 0.12);
   --input: #0c0c26;
   --input-background: #0c0c26;
   --switch-background: #141436;
@@ -116,7 +120,7 @@
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #0c0c26;
   --sidebar-accent-foreground: #f2ede8;
-  --sidebar-border: rgba(160, 170, 240, 0.10);
+  --sidebar-border: rgba(160, 170, 240, 0.12);
   --sidebar-ring: #ff6b47;
 }
 
