@@ -152,7 +152,7 @@ export default function PromptMentorCarreira() {
           <div className="flex flex-wrap gap-3">
             <a
               href="#o-prompt"
-              className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3 text-sm font-semibold hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3 text-sm font-semibold hover:bg-primary-hover active:bg-primary-pressed transition-colors"
             >
               Copiar o prompt <ArrowRight size={15} />
             </a>
@@ -293,7 +293,7 @@ export default function PromptMentorCarreira() {
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3 text-sm font-semibold hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3 text-sm font-semibold hover:bg-primary-hover active:bg-primary-pressed transition-colors"
           >
             Me chama no direct <ArrowRight size={15} />
           </a>

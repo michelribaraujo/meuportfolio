@@ -3081,7 +3081,7 @@ export default function Home() {
               >
                 <a
                   href="mailto:michel@mikhaelangelo.com.br"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground text-sm font-semibold px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary-hover active:bg-primary-pressed transition-colors"
                 >
                   <MailIcon size={13} />
                   Vamos conversar →
@@ -3455,7 +3455,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-3 justify-center">
             <a
               href="mailto:michel@mikhaelangelo.com.br"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-7 py-3 rounded-full hover:opacity-90 transition-opacity text-sm"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-7 py-3 rounded-full hover:bg-primary-hover active:bg-primary-pressed transition-colors text-sm"
             >
               Manda um oi →
             </a>

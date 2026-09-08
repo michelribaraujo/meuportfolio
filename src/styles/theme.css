@@ -29,13 +29,22 @@
   --popover: #ffffff;
   --popover-foreground: #1a1520;
   --primary: #ff6b47;
-  --primary-foreground: #ffffff;
+  /* Rotulo sobre o laranja. Era #ffffff, que da 2,82:1 contra o AA de 4,5
+     para texto normal: o rotulo do botao e 14px SemiBold, nao conta como
+     texto grande. O escuro da 7,04:1 e mantem a cor da marca intacta.
+     Vem de color/text/on-brand da Cosmic Sky. */
+  --primary-foreground: #09090f;
+  /* Estados do primario. Vem de color/interactive/primary-hover e -pressed.
+     A rampa de laranja so tinha um degrau solido, entao orange/600 nasceu
+     no design system para o pressionado. */
+  --primary-hover: #ff8a65;
+  --primary-pressed: #de5d3e;
   --secondary: #ede9e2;
   --secondary-foreground: #1a1520;
   --muted: #ede9e2;
   --muted-foreground: #6e6870;
   --accent: #ff6b47;
-  --accent-foreground: #ffffff;
+  --accent-foreground: #09090f;
   --destructive: #e5091f;
   --destructive-foreground: #ffffff;
   /* feedback: espelha color/feedback/* da Cosmic Sky. Contraste medido do
@@ -95,13 +104,22 @@
   --popover: #070722;
   --popover-foreground: #f2ede8;
   --primary: #ff6b47;
-  --primary-foreground: #ffffff;
+  /* Rotulo sobre o laranja. Era #ffffff, que da 2,82:1 contra o AA de 4,5
+     para texto normal: o rotulo do botao e 14px SemiBold, nao conta como
+     texto grande. O escuro da 7,04:1 e mantem a cor da marca intacta.
+     Vem de color/text/on-brand da Cosmic Sky. */
+  --primary-foreground: #09090f;
+  /* Estados do primario. Vem de color/interactive/primary-hover e -pressed.
+     A rampa de laranja so tinha um degrau solido, entao orange/600 nasceu
+     no design system para o pressionado. */
+  --primary-hover: #ff8a65;
+  --primary-pressed: #de5d3e;
   --secondary: #0c0c26;
   --secondary-foreground: #f2ede8;
   --muted: #0c0c26;
   --muted-foreground: #8890c0;
   --accent: #ff6b47;
-  --accent-foreground: #ffffff;
+  --accent-foreground: #09090f;
   --destructive: #e5091f;
   --destructive-foreground: #ffffff;
   --feedback-warning: #fbbf24;
@@ -145,6 +163,8 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-pressed: var(--primary-pressed);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);

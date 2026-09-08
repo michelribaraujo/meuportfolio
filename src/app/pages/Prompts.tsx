@@ -77,7 +77,7 @@ export default function Prompts() {
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3 text-sm font-semibold hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3 text-sm font-semibold hover:bg-primary-hover active:bg-primary-pressed transition-colors"
           >
             Me chama no direct <ArrowRight size={15} />
           </a>
