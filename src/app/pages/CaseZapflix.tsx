@@ -118,7 +118,7 @@ export default function CaseZapflix() {
                   Alto engajamento,<br /><em>público errado.</em>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-light">
-                  O Zapflix — chatbot da Netflix no WhatsApp — apresentava métricas de uso expressivas. O problema: o engajamento mascarava uma realidade crítica de negócio.
+                  O Zapflix, chatbot da Netflix no WhatsApp, apresentava métricas de uso expressivas. O problema: o engajamento mascarava uma realidade crítica de negócio.
                 </p>
               </div>
               <div className="col-span-12 lg:col-span-7">
@@ -128,9 +128,9 @@ export default function CaseZapflix() {
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     {[
-                      { flag: "problema", title: "Público errado", desc: "Alto engajamento concentrado em adolescentes — fora do perfil estratégico da Netflix." },
+                      { flag: "problema", title: "Público errado", desc: "Alto engajamento concentrado em adolescentes, fora do perfil estratégico da Netflix." },
                       { flag: "falso positivo", title: "Falso positivo", desc: "Métricas de uso positivas mascaravam a ausência total da persona de maior valor." },
-                      { flag: "oportunidade", title: "Persona ausente", desc: "Joana — mães e donas de casa, 40+ — completamente fora do alcance do produto." },
+                      { flag: "oportunidade", title: "Persona ausente", desc: "Joana (mães e donas de casa, 40+) estava completamente fora do alcance do produto." },
                       { flag: "risco", title: "Sem expansão", desc: "Market Share estagnado por falta de penetração em segmento com alto potencial." },
                     ].map((item) => (
                       <div key={item.flag} className="border border-border p-4 sm:p-5">
@@ -156,7 +156,7 @@ export default function CaseZapflix() {
             <div className="border-l-2 border-primary pl-6 sm:pl-8 py-2">
               <p className="text-lg sm:text-2xl font-light leading-relaxed text-foreground">
                 "A Netflix precisava expandir seu Market Share engajando{" "}
-                <strong className="font-semibold">'Joana'</strong> — mães e donas de casa com 40+ anos — um público{" "}
+                <strong className="font-semibold">'Joana'</strong>, mães e donas de casa com 40+ anos, um público{" "}
                 <em>invisível às redes sociais tradicionais</em>."
               </p>
             </div>
@@ -190,7 +190,7 @@ export default function CaseZapflix() {
                   Etnografia<br /><em>de rua.</em>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-light mb-6">
-                  Pesquisa qualitativa presencial com a persona Joana, mapeando comportamentos digitais reais — não percepções relatadas.
+                  Pesquisa qualitativa presencial com a persona Joana, mapeando comportamentos digitais reais, não percepções relatadas.
                 </p>
                 <div className="space-y-3">
                   {[
@@ -218,14 +218,14 @@ export default function CaseZapflix() {
                     <em>Não é conteúdo. É pertencimento.</em>
                   </p>
                   <p className="text-muted-foreground font-light text-sm leading-relaxed">
-                    A persona Joana compartilha imagens de "Bom dia / Boa noite" com textos motivacionais todos os dias. É um comportamento cultural profundamente enraizado — previsível, recorrente e afetivo. Um canal de distribuição orgânica já existente.
+                    A persona Joana compartilha imagens de "Bom dia / Boa noite" com textos motivacionais todos os dias. É um comportamento cultural profundamente enraizado: previsível, recorrente e afetivo. Um canal de distribuição orgânica já existente.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
-                    { label: "Comportamento diário e recorrente", desc: "Compartilhamento de figurinhas de bom dia / boa noite é ritual — não conteúdo casual." },
+                    { label: "Comportamento diário e recorrente", desc: "Compartilhamento de figurinhas de bom dia / boa noite é ritual, não conteúdo casual." },
                     { label: "Início do dia como gatilho", desc: "O hábito acontece cedo, antes das atividades do dia. Alta previsibilidade." },
-                    { label: "Múltiplos grupos simultâneos", desc: "Cada persona pertencia a vários grupos familiares — multiplicando o alcance orgânico." },
+                    { label: "Múltiplos grupos simultâneos", desc: "Cada persona pertencia a vários grupos familiares, o que multiplicava o alcance orgânico." },
                   ].map((item) => (
                     <div key={item.label} className="border border-border p-5">
                       <div className="font-medium text-sm mb-2">{item.label}</div>
@@ -279,12 +279,12 @@ export default function CaseZapflix() {
                   Injetar a marca<br /><em>onde Joana vive.</em>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-light mb-8">
-                  Um gerador interativo de figurinhas personalizadas combinando títulos da Netflix com textos inseridos pela própria usuária — zerando a curva de aprendizado.
+                  Um gerador interativo de figurinhas personalizadas combinando títulos da Netflix com textos inseridos pela própria usuária, sem curva de aprendizado.
                 </p>
                 <div className="space-y-6">
                   {[
                     { num: "01", title: "Interação nativa", desc: "A Joana já sabe usar o WhatsApp. Não havia nada novo a aprender." },
-                    { num: "02", title: "Customização pessoal", desc: "O texto é dela. A Netflix entra como suporte visual — não como interrupção." },
+                    { num: "02", title: "Customização pessoal", desc: "O texto é dela. A Netflix entra como suporte visual, não como interrupção." },
                     { num: "03", title: "Distribuição orgânica", desc: "Ao compartilhar a figurinha, ela distribui a marca Netflix para toda sua rede." },
                   ].map((item) => (
                     <div key={item.num} className="flex gap-4">
@@ -364,7 +364,7 @@ export default function CaseZapflix() {
                 </p>
                 <div className="border-l-2 border-primary pl-6 py-2">
                   <p className="text-sm text-muted-foreground font-light leading-relaxed">
-                    Criei um <strong className="font-medium text-foreground">estudo de linguagem semântica</strong> analisando os inputs digitados no chatbot — usando gírias juvenis vs. linguagem formal como proxy demográfico indireto.
+                    Criei um <strong className="font-medium text-foreground">estudo de linguagem semântica</strong> analisando os inputs digitados no chatbot, usando gírias juvenis vs. linguagem formal como proxy demográfico indireto.
                   </p>
                 </div>
               </div>
@@ -377,13 +377,13 @@ export default function CaseZapflix() {
                     Semântica como<br /><em>dado demográfico.</em>
                   </p>
                   <p className="text-muted-foreground font-light text-sm leading-relaxed">
-                    Se a persona Joana estava sendo adquirida, os inputs mudariam: menos gírias juvenis, mais linguagem formal e afetiva. A análise semântica longitudinal dos textos digitados funcionaria como termômetro demográfico — sem precisar de um único dado de perfil.
+                    Se a persona Joana estava sendo adquirida, os inputs mudariam: menos gírias juvenis, mais linguagem formal e afetiva. A análise semântica longitudinal dos textos digitados funcionaria como termômetro demográfico, sem precisar de um único dado de perfil.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
-                    { signal: "Queda de gírias", color: "text-emerald-400", desc: "Redução progressiva de expressões juvenis nos inputs — indicando churn intencional do público adolescente." },
-                    { signal: "Alta de linguagem formal", color: "text-primary", desc: "Aumento de inputs com linguagem afetiva e formal — padrão linguístico da persona Joana." },
+                    { signal: "Queda de gírias", color: "text-emerald-400", desc: "Redução progressiva de expressões juvenis nos inputs, indicando churn intencional do público adolescente." },
+                    { signal: "Alta de linguagem formal", color: "text-primary", desc: "Aumento de inputs com linguagem afetiva e formal, o padrão linguístico da persona Joana." },
                   ].map((item) => (
                     <div key={item.signal} className="border border-border bg-card p-5 sm:p-6">
                       <div className={`text-xs tracking-[0.15em] uppercase mb-3 font-medium ${item.color}`} style={{ fontFamily: "'DM Mono', monospace" }}>
@@ -401,7 +401,7 @@ export default function CaseZapflix() {
               <div className="col-span-12 lg:col-span-8">
                 <div className="border-l-2 border-primary pl-6 sm:pl-8 py-2">
                   <p className="text-lg sm:text-xl font-light leading-relaxed text-foreground">
-                    "Comprovei que o churn de adolescentes foi <strong className="font-semibold">intencional</strong> — e que a aquisição da persona Joana foi <strong className="font-semibold">validada tecnicamente</strong> por análise semântica, mesmo sem acesso a dados demográficos diretos."
+                    "Comprovei que o churn de adolescentes foi <strong className="font-semibold">intencional</strong> e que a aquisição da persona Joana foi <strong className="font-semibold">validada tecnicamente</strong> por análise semântica, mesmo sem acesso a dados demográficos diretos."
                   </p>
                 </div>
               </div>
