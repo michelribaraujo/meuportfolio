@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
 import SectionHeader from "../components/SectionHeader";
+import Button from "../components/Button";
 
 const WA_URL =
   "https://wa.me/5531983545099?text=Ol%C3%A1%2C%20vim%20da%20p%C3%A1gina%20de%20prompts!";
@@ -73,14 +74,15 @@ export default function Prompts() {
           center
         />
         <div className="flex flex-wrap gap-3 justify-center">
-          <a
+          <Button
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3 text-sm font-semibold hover:bg-primary-hover active:bg-primary-pressed transition-colors"
+            size="large"
+            iconRight={<ArrowRight size={15} />}
           >
-            Me chama no direct <ArrowRight size={15} />
-          </a>
+            Me chama no direct
+          </Button>
           <Link
             to="/"
             className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3 text-sm hover:bg-muted/50 transition-colors"

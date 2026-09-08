@@ -61,6 +61,11 @@
      modo Light resolve slate/500 (#5a698c). E muito mais forte que o
      --border porque a WCAG 1.4.11 exige 3:1 aqui, e o hairline de card, que
      e decoracao, e isento. Dois trabalhos diferentes, dois tokens. */
+  /* color/text/quaternary e color/border/subtle do Cosmic Sky. Entram
+     porque o Button usa os dois no estado desabilitado, e o desenho tem
+     esse estado. Sem eles o codigo teria que improvisar uma opacidade. */
+  --quaternary: #a8a29e;
+  --border-subtle: #e4e8f0;
   --border-control: #5a698c;
   --border-control-hover: #3855b9;
   --input: #ede9e2;
@@ -147,6 +152,8 @@
      mais clara. 30% daria 1,77:1 e continuaria reprovando. O hover vai a
      70% porque a 60% ainda da 2,79:1, e um hover mais fraco que o estado
      padrao seria regressao. */
+  --quaternary: #7c82ae;
+  --border-subtle: rgba(160, 170, 240, 0.08);
   --border-control: rgba(160, 170, 240, 0.55);
   --border-control-hover: rgba(255, 107, 71, 0.7);
   --input: #0c0c26;
@@ -196,6 +203,8 @@
   --color-feedback-warning: var(--feedback-warning);
   --color-feedback-warning-bg: var(--feedback-warning-bg);
   --color-border: var(--border);
+  --color-quaternary: var(--quaternary);
+  --color-border-subtle: var(--border-subtle);
   --color-border-control: var(--border-control);
   --color-border-control-hover: var(--border-control-hover);
   --color-input: var(--input);

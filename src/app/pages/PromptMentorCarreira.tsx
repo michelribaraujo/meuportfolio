@@ -4,6 +4,7 @@ import SectionHeader from "../components/SectionHeader";
 import NumberedCard from "../components/NumberedCard";
 import CodeBlock from "../components/CodeBlock";
 import DataTable, { type Coluna } from "../components/DataTable";
+import Button from "../components/Button";
 import {
   PROMPT_AMOSTRA,
   PROMPT_MD,
@@ -150,12 +151,9 @@ export default function PromptMentorCarreira() {
             Grátis · sem cadastro · Claude, ChatGPT ou Gemini
           </p>
           <div className="flex flex-wrap gap-3">
-            <a
-              href="#o-prompt"
-              className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3 text-sm font-semibold hover:bg-primary-hover active:bg-primary-pressed transition-colors"
-            >
-              Copiar o prompt <ArrowRight size={15} />
-            </a>
+            <Button href="#o-prompt" size="large" iconRight={<ArrowRight size={15} />}>
+              Copiar o prompt
+            </Button>
             <a
               href="#a-memoria"
               className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3 text-sm hover:bg-muted/50 transition-colors"
@@ -289,14 +287,15 @@ export default function PromptMentorCarreira() {
           center
         />
         <div className="flex flex-wrap gap-3 justify-center">
-          <a
+          <Button
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3 text-sm font-semibold hover:bg-primary-hover active:bg-primary-pressed transition-colors"
+            size="large"
+            iconRight={<ArrowRight size={15} />}
           >
-            Me chama no direct <ArrowRight size={15} />
-          </a>
+            Me chama no direct
+          </Button>
           <Link
             to="/"
             className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3 text-sm hover:bg-muted/50 transition-colors"

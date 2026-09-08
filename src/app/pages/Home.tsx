@@ -21,6 +21,7 @@ import netflixLogoPng from "../../imports/generated/netflix-logo.webp";
 import svgPaths from "../../imports/Logo-1/svg-kvxxug3d2k";
 import profilePhoto from "../../imports/generated/avatar-michel.webp";
 import dogPhoto from "../../imports/generated/avatar-cachorra.webp";
+import Button from "../components/Button";
 
 const CV_URL =
   "https://docs.google.com/document/d/e/2PACX-1vQVGtsXMLZWAXUnKXDPV1kSDl7YCYUxV2FzQWeCQbdQLatmKniOrtvABeLGCfSGKLM9qrLhv7YusOZs/pub";
@@ -3079,13 +3080,12 @@ export default function Home() {
                 variants={fadeUp}
                 className="flex flex-wrap gap-3"
               >
-                <a
+                <Button
                   href="mailto:michel@mikhaelangelo.com.br"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary-hover active:bg-primary-pressed transition-colors"
+                  iconLeft={<MailIcon size={13} />}
                 >
-                  <MailIcon size={13} />
                   Vamos conversar →
-                </a>
+                </Button>
                 <a
                   href={CV_URL}
                   target="_blank"
@@ -3453,12 +3453,9 @@ export default function Home() {
             design faz diferença de verdade.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a
-              href="mailto:michel@mikhaelangelo.com.br"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-7 py-3 rounded-full hover:bg-primary-hover active:bg-primary-pressed transition-colors text-sm"
-            >
+            <Button href="mailto:michel@mikhaelangelo.com.br" size="large">
               Manda um oi →
-            </a>
+            </Button>
             <a
               href={CV_URL}
               target="_blank"
