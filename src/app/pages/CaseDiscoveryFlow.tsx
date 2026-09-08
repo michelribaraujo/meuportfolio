@@ -26,7 +26,7 @@ export default function CaseDiscoveryFlow() {
               Take Blip · WhatsApp · Product Discovery
             </p>
             <h1
-              className="text-5xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-8"
+              className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 sm:mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Workshop de
