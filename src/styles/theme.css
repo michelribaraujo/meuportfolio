@@ -104,7 +104,13 @@
     #040418 94%,
     #02020e 100%
   );
-  --background: #030315;
+  /* Fundo de pagina. Vem de color/bg/primary do Cosmic Sky. Estava em
+     #030315, que e o valor de color/surface/sunken: papel de superficie
+     rebaixada, nao de fundo de pagina. O nome dizia uma coisa e o valor
+     vinha de outra. Alcance real: header fixo, barra de abas dos cases e
+     dois blocos de case, todos com bg-background. O Figma manda no
+     desenho. */
+  --background: #09090f;
   --foreground: #f2ede8;
   --card: #070722;
   --card-foreground: #f2ede8;
