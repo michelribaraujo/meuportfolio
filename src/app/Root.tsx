@@ -691,7 +691,7 @@ export default function Root() {
               aria-label="Enviar e-mail"
               title="michel@mikhaelangelo.com.br"
               onClick={() => trackEvent("clique_email", { local: "header" })}
-              className="w-8 h-8 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-border-control hover:border-border-control-hover text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all"
             >
               <Mail size={15} />
             </a>
@@ -702,7 +702,7 @@ export default function Root() {
               aria-label="LinkedIn"
               title="linkedin.com/in/mikhaelangelo"
               onClick={() => trackEvent("clique_linkedin", { local: "header" })}
-              className="w-8 h-8 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-border-control hover:border-border-control-hover text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all"
             >
               <LinkedInIcon size={15} />
             </a>
@@ -713,7 +713,7 @@ export default function Root() {
                   ? "Mudar para tema claro"
                   : "Mudar para tema escuro"
               }
-              className="w-8 h-8 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-border-control hover:border-border-control-hover text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
             >
               {dark ? <Sun size={15} /> : <Moon size={15} />}
             </button>

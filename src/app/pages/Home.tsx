@@ -3090,7 +3090,7 @@ export default function Home() {
                   href={CV_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-border text-sm font-medium px-5 py-2.5 rounded-full hover:border-primary/40 transition-colors text-muted-foreground hover:text-foreground"
+                  className="inline-flex items-center gap-2 border border-border-control text-sm font-medium px-5 py-2.5 rounded-full hover:border-border-control-hover transition-colors text-muted-foreground hover:text-foreground"
                 >
                   <FileText size={13} />
                   Ver currículo
@@ -3099,7 +3099,7 @@ export default function Home() {
                   href="https://www.linkedin.com/in/mikhaelangelo/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-border text-sm font-medium px-5 py-2.5 rounded-full hover:border-primary/40 transition-colors text-muted-foreground hover:text-foreground"
+                  className="inline-flex items-center gap-2 border border-border-control text-sm font-medium px-5 py-2.5 rounded-full hover:border-border-control-hover transition-colors text-muted-foreground hover:text-foreground"
                 >
                   LinkedIn
                 </a>
@@ -3252,7 +3252,7 @@ export default function Home() {
                   href={CV_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm border border-border px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:border-foreground/20 transition-all"
+                  className="inline-flex items-center gap-2 text-sm border border-border-control px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:border-border-control-hover transition-all"
                 >
                   <FileText size={12} />
                   Currículo completo
