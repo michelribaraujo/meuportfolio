@@ -1,4 +1,5 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
+import { Slot } from "@radix-ui/react-slot";
 import { cn } from "./ui/utils";
 
 /**
@@ -29,6 +30,14 @@ import { cn } from "./ui/utils";
  * Estado no Figma vira pseudo-classe aqui: Hover e :hover, Pressed e
  * :active, Disabled e :disabled. Como :disabled nao existe em <a>, quando
  * `disabled` e true o componente renderiza <button> mesmo tendo href.
+ *
+ * Para navegacao interna, que usa o <Link> do react-router, passe
+ * `asChild` e coloque o <Link> dentro. O Button so empresta as classes e
+ * quem renderiza a tag e o filho, entao o roteador continua no controle:
+ *
+ *   <Button asChild variant="secondary" size="large">
+ *     <Link to="/">Ver os cases</Link>
+ *   </Button>
  */
 
 type Variant = "primary" | "secondary" | "ghost";
@@ -62,26 +71,20 @@ const byVariant: Record<Variant, string> = {
   ),
 };
 
-type Common = {
+type Props = {
   variant?: Variant;
   size?: Size;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   children: ReactNode;
   className?: string;
-};
-
-type Props = Common &
-  (
-    | ({ href: string; disabled?: false } & Omit<
-        AnchorHTMLAttributes<HTMLAnchorElement>,
-        "className" | "children"
-      >)
-    | ({ href?: undefined; disabled?: boolean } & Omit<
-        ButtonHTMLAttributes<HTMLButtonElement>,
-        "className" | "children"
-      >)
-  );
+  href?: string;
+  disabled?: boolean;
+  asChild?: boolean;
+} & Omit<
+  AnchorHTMLAttributes<HTMLAnchorElement> & ButtonHTMLAttributes<HTMLButtonElement>,
+  "className" | "children" | "href" | "disabled"
+>;
 
 export default function Button({
   variant = "primary",
@@ -90,6 +93,9 @@ export default function Button({
   iconRight,
   children,
   className,
+  href,
+  disabled,
+  asChild,
   ...rest
 }: Props) {
   const classes = cn(base, bySize[size], byVariant[variant], className);
@@ -101,22 +107,24 @@ export default function Button({
     </>
   );
 
-  if ("href" in rest && rest.href && !("disabled" in rest && rest.disabled)) {
-    const { href, ...anchor } = rest as AnchorHTMLAttributes<HTMLAnchorElement> & {
-      href: string;
-    };
+  if (asChild) {
     return (
-      <a href={href} className={classes} {...anchor}>
+      <Slot className={classes} {...rest}>
+        {children}
+      </Slot>
+    );
+  }
+
+  if (href && !disabled) {
+    return (
+      <a href={href} className={classes} {...rest}>
         {content}
       </a>
     );
   }
 
-  const { href: _drop, ...button } = rest as ButtonHTMLAttributes<HTMLButtonElement> & {
-    href?: string;
-  };
   return (
-    <button className={classes} {...button}>
+    <button className={classes} disabled={disabled} {...rest}>
       {content}
     </button>
   );

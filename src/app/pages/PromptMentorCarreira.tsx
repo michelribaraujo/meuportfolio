@@ -154,12 +154,9 @@ export default function PromptMentorCarreira() {
             <Button href="#o-prompt" size="large" iconRight={<ArrowRight size={15} />}>
               Copiar o prompt
             </Button>
-            <a
-              href="#a-memoria"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3 text-sm hover:bg-muted/50 transition-colors"
-            >
+            <Button href="#a-memoria" variant="secondary" size="large">
               Ver o modelo de memória
-            </a>
+            </Button>
           </div>
         </div>
         <CodeBlock
@@ -296,12 +293,9 @@ export default function PromptMentorCarreira() {
           >
             Me chama no direct
           </Button>
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3 text-sm hover:bg-muted/50 transition-colors"
-          >
-            Ver os cases
-          </Link>
+          <Button asChild variant="secondary" size="large">
+            <Link to="/">Ver os cases</Link>
+          </Button>
         </div>
       </section>
     </div>

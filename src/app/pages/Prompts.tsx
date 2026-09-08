@@ -83,12 +83,9 @@ export default function Prompts() {
           >
             Me chama no direct
           </Button>
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3 text-sm hover:bg-muted/50 transition-colors"
-          >
-            Ver os cases
-          </Link>
+          <Button asChild variant="secondary" size="large">
+            <Link to="/">Ver os cases</Link>
+          </Button>
         </div>
       </section>
     </div>

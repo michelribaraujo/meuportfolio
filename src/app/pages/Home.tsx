@@ -3086,23 +3086,23 @@ export default function Home() {
                 >
                   Vamos conversar →
                 </Button>
-                <a
+                <Button
                   href={CV_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-border-control text-sm font-medium px-5 py-2.5 rounded-full hover:border-border-control-hover transition-colors text-muted-foreground hover:text-foreground"
+                  variant="secondary"
                 >
                   <FileText size={13} />
                   Ver currículo
-                </a>
-                <a
+                </Button>
+                <Button
                   href="https://www.linkedin.com/in/mikhaelangelo/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-border-control text-sm font-medium px-5 py-2.5 rounded-full hover:border-border-control-hover transition-colors text-muted-foreground hover:text-foreground"
+                  variant="secondary"
                 >
                   LinkedIn
-                </a>
+                </Button>
               </motion.div>
             </motion.div>
 
@@ -3248,15 +3248,16 @@ export default function Home() {
                 diagnóstico, é autópsia.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a
+                <Button
                   href={CV_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm border border-border-control px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:border-border-control-hover transition-all"
+                  variant="secondary"
+                  size="small"
                 >
                   <FileText size={12} />
                   Currículo completo
-                </a>
+                </Button>
               </div>
             </motion.div>
 
@@ -3456,15 +3457,16 @@ export default function Home() {
             <Button href="mailto:michel@mikhaelangelo.com.br" size="large">
               Manda um oi →
             </Button>
-            <a
+            <Button
               href={CV_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-border/50 text-sm font-medium px-7 py-3 rounded-full hover:border-primary/30 transition-colors text-muted-foreground hover:text-foreground"
+              variant="secondary"
+              size="large"
             >
               <FileText size={13} />
               Ver CV
-            </a>
+            </Button>
           </div>
         </motion.div>
       </section>
