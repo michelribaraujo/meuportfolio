@@ -44,7 +44,7 @@ export default function CaseDiscoveryFlow() {
               {[
                 { label: "Papel", value: "UX Designer & Facilitador" },
                 { label: "Ferramentas", value: "Miro · Figma" },
-                { label: "Escopo", value: "Organização 360° — múltiplas áreas" },
+                { label: "Escopo", value: "Organização 360°, múltiplas áreas" },
                 { label: "Resultado", value: "Dores mapeadas + próximos passos definidos" },
               ].map((item) => (
                 <div key={item.label} className="flex justify-between items-start gap-4">
@@ -103,7 +103,7 @@ export default function CaseDiscoveryFlow() {
                   Organização<br /><em>agitada,<br />time sem rumo.</em>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-light">
-                  Como parte da melhoria contínua de um produto digital de chatbot para WhatsApp, precisávamos entender quais seriam os próximos caminhos. A direção tinha que ser estratégica — sem desperdiçar recursos.
+                  Como parte da melhoria contínua de um produto digital de chatbot para WhatsApp, precisávamos entender quais seriam os próximos caminhos. A direção tinha que ser estratégica, sem desperdiçar recursos.
                 </p>
               </div>
               <div className="col-span-12 lg:col-span-7">
@@ -115,7 +115,7 @@ export default function CaseDiscoveryFlow() {
                     {[
                       { label: "O time", desc: "Desconhecia uma maneira estruturada de levantar problemas dos usuários e clientes para mapear oportunidades com o produto." },
                       { label: "O cliente", desc: "Também não sabia por onde começar. A ausência de método gerava ansiedade e decisões reativas." },
-                      { label: "A organização", desc: "Estava agitada — sem saber o que fazer a seguir. Faltava um momento deliberado de alinhamento entre todas as partes." },
+                      { label: "A organização", desc: "Estava agitada, sem saber o que fazer a seguir. Faltava um momento deliberado de alinhamento entre todas as partes." },
                     ].map((item) => (
                       <div key={item.label} className="border-b border-border pb-5 last:border-0 last:pb-0">
                         <p className="text-xs text-yellow-400 font-medium mb-2 uppercase tracking-wider" style={{ fontFamily: "'DM Mono', monospace" }}>{item.label}</p>
@@ -129,7 +129,7 @@ export default function CaseDiscoveryFlow() {
 
             <div className="border-l-2 border-yellow-400 pl-8 py-2">
               <p className="text-2xl font-light leading-relaxed text-foreground">
-                "Era um momento raro na organização — todas as partes numa mesma sala virtual, debatendo em prol de um mesmo projeto."
+                "Era um momento raro na organização: todas as partes numa mesma sala virtual, debatendo em prol de um mesmo projeto."
               </p>
             </div>
           </div>
@@ -146,10 +146,10 @@ export default function CaseDiscoveryFlow() {
                   Discovery<br /><em>imersivo<br />360°.</em>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-light mb-6">
-                  Preparei um workshop imersivo de Discovery Flow envolvendo a empresa de forma 360 graus — alcançando áreas distintas da organização que raramente se falavam.
+                  Preparei um workshop imersivo de Discovery Flow envolvendo a empresa de forma 360 graus, alcançando áreas distintas da organização que raramente se falavam.
                 </p>
                 <p className="text-muted-foreground leading-relaxed font-light">
-                  A primeira etapa foi apresentar toda a jornada do cliente e como o chatbot fazia parte dela — contextualizando a discussão antes de abrir o espaço para divergências.
+                  A primeira etapa foi apresentar toda a jornada do cliente e como o chatbot fazia parte dela, contextualizando a discussão antes de abrir o espaço para divergências.
                 </p>
               </div>
               <div className="col-span-12 lg:col-span-7 space-y-4">
@@ -161,7 +161,7 @@ export default function CaseDiscoveryFlow() {
                     {[
                       { step: "01", title: "Apresentação da Jornada", desc: "Mapeamento completo do processo de onboarding e jornada do cliente, mostrando onde o chatbot se encaixava." },
                       { step: "02", title: "Alinhamento de Objetivos", desc: "Técnica para alinhar o que queremos alcançar e entender as relações de cada stakeholder com o projeto." },
-                      { step: "03", title: "Mapa de Stakeholders", desc: "Visualização de quem está dentro e fora do projeto de cliente — distância e influência de cada parte." },
+                      { step: "03", title: "Mapa de Stakeholders", desc: "Visualização de quem está dentro e fora do projeto de cliente, com distância e influência de cada parte." },
                       { step: "04", title: "Dores & Necessidades", desc: "Brainstorm estruturado para mapear dores dos usuários/clientes por área e relevância para o produto." },
                       { step: "05", title: "Votação e Priorização", desc: "Votação democrática das dores mais críticas, seguida de consenso sobre próximas etapas." },
                     ].map((item) => (
@@ -190,7 +190,7 @@ export default function CaseDiscoveryFlow() {
                 {
                   title: "Mapeamento de Dores",
                   phase: "Divergência",
-                  desc: "Cada participante contribuiu com dores observadas no contato direto com usuários e clientes. O volume de insights surpreendeu — havia muito conhecimento tácito represado.",
+                  desc: "Cada participante contribuiu com dores observadas no contato direto com usuários e clientes. O volume de insights surpreendeu: havia muito conhecimento tácito represado.",
                   items: ["Dores relacionadas ao C2 (cliente da empresa)", "Dores relacionadas à corporação", "Dores com potencial para o negócio"],
                 },
                 {
@@ -223,7 +223,7 @@ export default function CaseDiscoveryFlow() {
                 O Diferencial da Abordagem
               </p>
               <p className="text-muted-foreground font-light leading-relaxed">
-                Fiz questão de envolver a empresa de forma 360 graus — incluindo áreas que raramente participam de decisões de produto. A riqueza dos insights veio exatamente de quem lida diretamente com os usuários no dia a dia, mas nunca tinha sido convidado a contribuir estrategicamente.
+                Fiz questão de envolver a empresa de forma 360 graus, incluindo áreas que raramente participam de decisões de produto. A riqueza dos insights veio exatamente de quem lida diretamente com os usuários no dia a dia, mas nunca tinha sido convidado a contribuir estrategicamente.
               </p>
             </div>
           </div>
@@ -267,7 +267,7 @@ export default function CaseDiscoveryFlow() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border">
               {[
                 { label: "Dores mapeadas", desc: "Lista estruturada de dores dos usuários e clientes, organizada por área e relevância." },
-                { label: "Próximos passos", desc: "Consenso sobre o que fazer nas próximas etapas do produto digital — sem ambiguidade." },
+                { label: "Próximos passos", desc: "Consenso sobre o que fazer nas próximas etapas do produto digital, sem ambiguidade." },
                 { label: "Time unido", desc: "Time de produto, cliente e áreas operacionais alinhados e comprometidos com a mesma direção." },
               ].map((item) => (
                 <div key={item.label} className="bg-card p-8">
@@ -281,7 +281,7 @@ export default function CaseDiscoveryFlow() {
 
             <div className="border-l-2 border-yellow-400 pl-8 py-2">
               <p className="text-xl font-light leading-relaxed text-foreground">
-                "O workshop foi um sucesso — não pela metodologia, mas pela <strong className="font-semibold">riqueza do que emergiu</strong> quando as pessoas certas finalmente estavam na mesma sala."
+                "O workshop foi um sucesso, não pela metodologia, mas pela <strong className="font-semibold">riqueza do que emergiu</strong> quando as pessoas certas finalmente estavam na mesma sala."
               </p>
             </div>
           </div>
