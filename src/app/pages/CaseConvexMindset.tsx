@@ -65,7 +65,7 @@ export default function CaseConvexMindset() {
               <em className="not-italic text-emerald-400">Mindset</em>
             </h1>
             <p className="text-lg text-muted-foreground font-light max-w-xl leading-relaxed">
-              Uma metodologia proprietária de análise comportamental para chatbots — criada para tornar visível o que os dados brutos escondem.
+              Uma metodologia proprietária de análise comportamental para chatbots, criada para tornar visível o que os dados brutos escondem.
             </p>
           </div>
           <div className="col-span-12 lg:col-span-4">
@@ -132,7 +132,7 @@ export default function CaseConvexMindset() {
                   Dados que<br /><em>enganam<br />em vez de guiar.</em>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-light">
-                  O produto tinha o objetivo principal de entretenimento, mas também atendia ao suporte. O público-alvo era amplo e contemplava personas distintas — tornando o produto relativamente complexo com jornadas diversas.
+                  O produto tinha o objetivo principal de entretenimento, mas também atendia ao suporte. O público-alvo era amplo e contemplava personas distintas, o que tornava o produto complexo, com jornadas diversas.
                 </p>
               </div>
               <div className="col-span-12 lg:col-span-7">
@@ -214,7 +214,7 @@ export default function CaseConvexMindset() {
                 </p>
                 <div className="border-l-2 border-emerald-400 pl-6 py-2">
                   <p className="text-sm text-muted-foreground font-light leading-relaxed">
-                    A visualização permitiu enxergar pontos da jornada que potencialmente apresentariam falhas — e a partir desses pontos, buscamos compreender mais a fundo os fenômenos e os "porquês".
+                    A visualização permitiu enxergar pontos da jornada que potencialmente apresentariam falhas. A partir desses pontos, buscamos compreender mais a fundo os fenômenos e os "porquês".
                   </p>
                 </div>
               </div>
@@ -225,11 +225,11 @@ export default function CaseConvexMindset() {
                   </p>
                   <div className="space-y-3">
                     {[
-                      { flow: "Menu Principal", insight: "Alta concentração de intenções esperadas — âncora da jornada." },
-                      { flow: "Atendimento", insight: "Volume expressivo de intenções não compreendidas — oportunidade de NLP." },
-                      { flow: "Conteúdos", insight: "Pico de mudança de contexto — usuários explorando além do fluxo previsto." },
-                      { flow: "Top 10", insight: "Baixo abandono — feature com alta aderência à expectativa." },
-                      { flow: "Pesquisa CSAT", insight: "Abandono elevado — fricção na coleta de satisfação." },
+                      { flow: "Menu Principal", insight: "Alta concentração de intenções esperadas: é a âncora da jornada." },
+                      { flow: "Atendimento", insight: "Volume expressivo de intenções não compreendidas: oportunidade de NLP." },
+                      { flow: "Conteúdos", insight: "Pico de mudança de contexto: usuários explorando além do fluxo previsto." },
+                      { flow: "Top 10", insight: "Baixo abandono: feature com alta aderência à expectativa." },
+                      { flow: "Pesquisa CSAT", insight: "Abandono elevado: fricção na coleta de satisfação." },
                     ].map((item) => (
                       <div key={item.flow} className="flex gap-4 items-start border-b border-border pb-3 last:border-0 last:pb-0">
                         <span className="text-emerald-400 text-xs font-medium shrink-0 min-w-[120px]" style={{ fontFamily: "'DM Mono', monospace" }}>{item.flow}</span>
@@ -244,7 +244,7 @@ export default function CaseConvexMindset() {
                     Dashboard em Power BI
                   </p>
                   <p className="text-sm text-muted-foreground font-light leading-relaxed">
-                    Elaboramos um dashboard com os principais dados e indicadores baseados no Convex Mindset — permitindo monitorar a saúde comportamental do chatbot em tempo real, por fluxo e por período.
+                    Elaboramos um dashboard com os principais dados e indicadores baseados no Convex Mindset, que permite monitorar a saúde comportamental do chatbot em tempo real, por fluxo e por período.
                   </p>
                 </div>
               </div>
@@ -263,7 +263,7 @@ export default function CaseConvexMindset() {
                   Um mesmo dado,<br /><em>perspectivas<br />infinitas.</em>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-light mb-6">
-                  Um mesmo grupo de dados pode ser analisado a partir de diversas técnicas e ferramentas de visual analytics — mas para cada visualização, o cérebro obtém interpretações diferentes.
+                  Um mesmo grupo de dados pode ser analisado a partir de diversas técnicas e ferramentas de visual analytics, mas para cada visualização o cérebro obtém interpretações diferentes.
                 </p>
                 <div className="border-l-2 border-emerald-400 pl-6 py-2">
                   <p className="text-sm text-muted-foreground font-light leading-relaxed">
@@ -278,9 +278,9 @@ export default function CaseConvexMindset() {
                   </p>
                   <div className="space-y-4">
                     {[
-                      { label: "Padronização dos dados", desc: "Uma linguagem comum para descrever comportamentos — eliminando ambiguidade na leitura dos dados." },
+                      { label: "Padronização dos dados", desc: "Uma linguagem comum para descrever comportamentos, o que elimina ambiguidade na leitura dos dados." },
                       { label: "Melhor comunicação com o cliente", desc: "Os dashboards tornaram visível e tangível o que antes era abstrato para os stakeholders." },
-                      { label: "Indicadores acionáveis", desc: "Com o Convex, cada fluxo passou a ter indicadores claros de saúde — não apenas volume de interações." },
+                      { label: "Indicadores acionáveis", desc: "Com o Convex, cada fluxo passou a ter indicadores claros de saúde, não apenas volume de interações." },
                       { label: "Visualização de jornadas", desc: "Conseguimos visualizar melhor as possíveis jornadas que cada persona estaria performando no produto." },
                     ].map((item) => (
                       <div key={item.label} className="flex gap-4 items-start border-b border-emerald-400/10 pb-4 last:border-0 last:pb-0">
@@ -298,7 +298,7 @@ export default function CaseConvexMindset() {
 
             <div className="border-l-2 border-emerald-400 pl-8 py-2">
               <p className="text-xl font-light leading-relaxed text-foreground">
-                "O Convex Mindset não é uma ferramenta — é uma <strong className="font-semibold">forma de pensar</strong>. Uma vez adotada, ela muda permanentemente como o time lê e interpreta o comportamento dos usuários em interfaces conversacionais."
+                "O Convex Mindset não é uma ferramenta. É uma <strong className="font-semibold">forma de pensar</strong>. Uma vez adotada, ela muda permanentemente como o time lê e interpreta o comportamento dos usuários em interfaces conversacionais."
               </p>
             </div>
           </div>
