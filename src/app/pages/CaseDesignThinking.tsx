@@ -115,7 +115,7 @@ export default function CaseDesignThinking() {
                     O stakeholder e sua equipe eram as únicas entidades acessíveis com conhecimento real sobre o público.
                   </p>
                   <p className="text-muted-foreground font-light text-sm leading-relaxed mb-6">
-                    "Melhor do que nada, né?" — essa foi a virada de perspectiva. O conhecimento tácito dos stakeholders, estruturado com a metodologia certa, poderia ser o substituto viável para uma pesquisa formal.
+                    "Melhor do que nada, né?" Essa foi a virada de perspectiva. O conhecimento tácito dos stakeholders, estruturado com a metodologia certa, poderia ser o substituto viável para uma pesquisa formal.
                   </p>
                   <div className="border border-blue-400/20 p-4">
                     <p className="text-xs text-muted-foreground font-light italic">
@@ -158,7 +158,7 @@ export default function CaseDesignThinking() {
                 </p>
                 <div className="border-l-2 border-blue-400 pl-6 py-2">
                   <p className="text-sm text-muted-foreground font-light leading-relaxed">
-                    O objetivo era extrair o máximo de informações sobre o público-alvo, buscar compreensão dos problemas reais e gerar ideias de forma estratégica — com time de produto e cliente no mesmo lado do muro.
+                    O objetivo era extrair o máximo de informações sobre o público-alvo, buscar compreensão dos problemas reais e gerar ideias de forma estratégica, com time de produto e cliente no mesmo lado do muro.
                   </p>
                 </div>
               </div>
@@ -205,7 +205,7 @@ export default function CaseDesignThinking() {
                     "Mapa de empatia para exportar conhecimento dos stakeholders",
                     "Discussões facilitadas sobre o público-alvo",
                   ],
-                  insight: "Os stakeholders possuíam muito mais conhecimento sobre a persona do que percebiam — só precisava de estrutura para emergir.",
+                  insight: "Os stakeholders possuíam muito mais conhecimento sobre a persona do que percebiam. Só precisava de estrutura para emergir.",
                 },
                 {
                   phase: "Definição",
@@ -216,7 +216,7 @@ export default function CaseDesignThinking() {
                     "Matriz WHW (What? How? Why?) para chegar à definição do problema",
                     "Diagrama de afinidade para organizar ideias por similaridade",
                   ],
-                  insight: "Uma definição clara de problema orientada à ação — compartilhada por todos no workshop.",
+                  insight: "Uma definição clara de problema orientada à ação, compartilhada por todos no workshop.",
                 },
                 {
                   phase: "Ideação",
@@ -240,7 +240,7 @@ export default function CaseDesignThinking() {
                   <div className="space-y-3">
                     {phase.steps.map((step, i) => (
                       <div key={i} className="flex gap-3 items-start">
-                        <span className="text-blue-400 text-xs shrink-0 pt-0.5" style={{ fontFamily: "'DM Mono', monospace" }}>—</span>
+                        <span aria-hidden="true" className="text-blue-400 text-xs shrink-0 pt-0.5" style={{ fontFamily: "'DM Mono', monospace" }}>→</span>
                         <span className="text-sm text-muted-foreground font-light">{step}</span>
                       </div>
                     ))}
@@ -265,7 +265,7 @@ export default function CaseDesignThinking() {
                   No mesmo<br /><em>lado do muro.</em>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-light mb-6">
-                  Ao final das 4 horas, todos — time de produto e cliente — estavam completamente alinhados sobre o público, o problema a resolver e a ideia a seguir para testes.
+                  Ao final das 4 horas, time de produto e cliente estavam completamente alinhados sobre o público, o problema a resolver e a ideia a seguir para testes.
                 </p>
                 <div className="border-l-2 border-blue-400 pl-6 py-2">
                   <p className="text-sm text-muted-foreground font-light leading-relaxed italic">
@@ -281,7 +281,7 @@ export default function CaseDesignThinking() {
                   <div className="space-y-4">
                     {[
                       "Alinhamento total sobre informações do público-alvo",
-                      "Problema eleito para foco — definido coletivamente",
+                      "Problema eleito para foco, definido coletivamente",
                       "Ideia para testes comprada pelo cliente",
                       "Protótipos de baixa fidelidade das ideias priorizadas",
                       "Time de produto e cliente no mesmo lado do muro",
@@ -310,7 +310,7 @@ export default function CaseDesignThinking() {
 
             <div className="border-l-2 border-blue-400 pl-8 py-2">
               <p className="text-xl font-light leading-relaxed text-foreground">
-                "O workshop não substituiu a pesquisa — ele <strong className="font-semibold">estruturou o que já existia</strong>. Com metodologia certa, o conhecimento tácito dos stakeholders se tornou <strong className="font-semibold">insumo estratégico real</strong>."
+                "O workshop não substituiu a pesquisa. Ele <strong className="font-semibold">estruturou o que já existia</strong>. Com metodologia certa, o conhecimento tácito dos stakeholders se tornou <strong className="font-semibold">insumo estratégico real</strong>."
               </p>
             </div>
           </div>
