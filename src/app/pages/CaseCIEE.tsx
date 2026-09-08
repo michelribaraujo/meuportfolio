@@ -55,7 +55,7 @@ export default function CaseCIEE() {
               Governança
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground font-light max-w-xl leading-relaxed">
-              Como transformei o processo de Discovery em instrumento de governança corporativa —
+              Como transformei o processo de Discovery em instrumento de governança corporativa,
               forçando visibilidade executiva sobre riscos críticos antes de um lançamento que a
               diretoria insistia em fazer às cegas.
             </p>
@@ -170,13 +170,13 @@ export default function CaseCIEE() {
                   <h4 className="font-semibold mb-3 text-foreground">Métrica de Vaidade Financeira</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                     A meta de receita era sustentada pelo{" "}
-                    <span className="text-foreground font-medium">float D-3/CDI</span> — rentabilidade sobre os
+                    <span className="text-foreground font-medium">float D-3/CDI</span>, a rentabilidade sobre os
                     valores de bolsa repassados pelas empresas 3 dias úteis antes do pagamento. Isso{" "}
                     <em>não era receita do produto [Produto]</em>: era uma receita financeira do modelo de
                     pagamento centralizado da [Empresa], que existiria com ou sem o produto.
                   </p>
                   <p className="text-xs text-muted-foreground italic border-l-2 pl-3" style={{ borderColor: `${ACCENT}50` }}>
-                    "A parcela associada a D-3/CDI não deve ser atribuída ao produto Conta [Produto]." — Dossiê de Discovery
+                    "A parcela associada a D-3/CDI não deve ser atribuída ao produto Conta [Produto]." · Dossiê de Discovery
                   </p>
                 </div>
                 <div className="rounded-xl border border-border bg-card p-6">
@@ -191,9 +191,9 @@ export default function CaseCIEE() {
                   </div>
                   <ul className="space-y-3">
                     {[
-                      { title: "Segurança da plataforma [Parceiro WL]", desc: "Gaps técnicos identificados nos scans de vulnerabilidade — condição crítica para go-live, ainda em tratamento." },
+                      { title: "Segurança da plataforma [Parceiro WL]", desc: "Gaps técnicos identificados nos scans de vulnerabilidade. Condição crítica para go-live, ainda em tratamento." },
                       { title: "Impasse jurídico: menores de idade", desc: "Abertura de contas para aprendizes menores de 18 anos sem parecer formal de Jurídico/Compliance definido." },
-                      { title: "Ausência de arquitetura de integração", desc: "Sem APIs definidas entre [ERP], [SistFin] e [Parceiro WL]. Sem integração, cada abertura de conta seria manual — tornando a meta de 50 mil contas operacionalmente inviável." },
+                      { title: "Ausência de arquitetura de integração", desc: "Sem APIs definidas entre [ERP], [SistFin] e [Parceiro WL]. Sem integração, cada abertura de conta seria manual, o que tornava a meta de 50 mil contas operacionalmente inviável." },
                     ].map((item) => (
                       <li key={item.title} className="flex items-start gap-2 text-sm">
                         <span className="text-red-500 mt-0.5 shrink-0">✕</span>
@@ -284,7 +284,7 @@ export default function CaseCIEE() {
                   Governança<br /><em className="not-italic" style={{ color: ACCENT }}>por evidência,</em><br />não confronto.
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-light">
-                  Com a diretoria hostil ao bloqueio do projeto, a tática não foi confronto direto — mas também
+                  Com a diretoria hostil ao bloqueio do projeto, a tática não foi confronto direto, mas também
                   não foi conivência. A solução foi transformar o Discovery em{" "}
                   <span className="text-foreground font-medium">instrumento de governança corporativa</span>.
                 </p>
@@ -292,10 +292,10 @@ export default function CaseCIEE() {
               <div className="col-span-12 lg:col-span-7">
                 <div className="space-y-4">
                   {[
-                    { step: "01", title: "Avancei em paralelo", body: "Mantive a esteira rumo ao Delivery — desenhando jornadas operacionais, fluxos To Be e o service blueprint — para não bloquear o time nem dar pretexto para ser desautorizado." },
-                    { step: "02", title: "Documentei a dívida técnica com precisão cirúrgica", body: "Separei no business case o que era receita do produto (rebates Visa, taxas de serviço, benefícios B2B2C) do que era receita financeira do modelo de pagamento centralizado (D-3/CDI). Essa separação expôs que a meta inicial não era sustentada pelo produto — era pelo float existente." },
+                    { step: "01", title: "Avancei em paralelo", body: "Mantive a esteira rumo ao Delivery (jornadas operacionais, fluxos To Be e service blueprint) para não bloquear o time nem dar pretexto para ser desautorizado." },
+                    { step: "02", title: "Documentei a dívida técnica com precisão cirúrgica", body: "Separei no business case o que era receita do produto (rebates Visa, taxas de serviço, benefícios B2B2C) do que era receita financeira do modelo de pagamento centralizado (D-3/CDI). Essa separação expôs que a meta inicial não era sustentada pelo produto, e sim pelo float existente." },
                     { step: "03", title: "Criei o Mapa de Riscos × Matriz RACI", body: "Associei cada risco a um responsável institucional por área: Jurídico assinou os riscos de menores e PAT/CEBAS; [Segurança da Informação] assinou os gaps da plataforma [Parceiro WL]; [Tecnologia/Arquitetura] assinou os impasses de integração; [Financeiro] assinou as premissas financeiras." },
-                    { step: "04", title: "Forcei visibilidade executiva contínua", body: "Usei o Discovery para obrigar responsáveis de cada área a reconhecerem formalmente os riscos. Ninguém poderia depois alegar que não sabia — o Dossiê de Discovery registrou quem foi consultado, quem estava ciente e quem assinou a responsabilidade." },
+                    { step: "04", title: "Forcei visibilidade executiva contínua", body: "Usei o Discovery para obrigar responsáveis de cada área a reconhecerem formalmente os riscos. Ninguém poderia depois alegar que não sabia: o Dossiê de Discovery registrou quem foi consultado, quem estava ciente e quem assinou a responsabilidade." },
                     { step: "05", title: "Impus critérios técnicos de Go/No-Go", body: "Condicionei qualquer escala à correção dos gaps de segurança do [Parceiro WL], formalização dos pareceres jurídicos sobre menores, definição da arquitetura de integração e validação com usuários reais (5–10 jovens, incluindo menores, e 5–10 gestores de RH)." },
                   ].map((item) => (
                     <div key={item.step} className="flex gap-5 items-start">
@@ -338,7 +338,7 @@ export default function CaseCIEE() {
                 ))}
               </div>
               <p className="text-xs text-muted-foreground mt-3 italic">
-                * O D-3/CDI (até R$ 90k/mês) foi separado — pertence ao modelo de pagamento centralizado da [Empresa], não ao produto.
+                * O D-3/CDI (até R$ 90k/mês) foi separado: pertence ao modelo de pagamento centralizado da [Empresa], não ao produto.
               </p>
             </div>
 
@@ -347,7 +347,7 @@ export default function CaseCIEE() {
                 ✦ A lógica por trás da tática
               </p>
               <p className="text-muted-foreground leading-relaxed text-sm">
-                Se a diretoria quisesse prosseguir mesmo com os riscos documentados, que o fizesse —
+                Se a diretoria quisesse prosseguir mesmo com os riscos documentados, que o fizesse,
                 mas com ciência registrada. O Discovery deixou de ser pesquisa e virou{" "}
                 <span className="text-foreground font-medium">dossiê de responsabilidade executiva</span>.
                 A dependência crítica da plataforma [Parceiro WL] foi registrada formalmente.
@@ -375,7 +375,7 @@ export default function CaseCIEE() {
                   Arquitetura<br /><em className="not-italic" style={{ color: ACCENT }}>de ponta</em><br />a ponta.
                 </h2>
                 <p className="text-muted-foreground leading-relaxed font-light">
-                  Mesmo sob pressão, desenhei a arquitetura de serviço completa — conectando o que o usuário
+                  Mesmo sob pressão, desenhei a arquitetura de serviço completa, conectando o que o usuário
                   enxerga ao que precisa acontecer nos bastidores. O blueprint ficou organizado em 4 camadas.
                 </p>
               </div>
@@ -517,7 +517,7 @@ export default function CaseCIEE() {
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Impus critérios formais de{" "}
-                    <span className="text-foreground font-medium">Go/No-Go</span> baseados em evidências —
+                    <span className="text-foreground font-medium">Go/No-Go</span> baseados em evidências,
                     não em opiniões. Propus rollout faseado com pilotos controlados antes de escala nacional.
                     Documentei que a meta de outubro era tecnicamente inviável sem antes resolver as 8 dependências críticas pendentes.
                   </p>
@@ -543,7 +543,7 @@ export default function CaseCIEE() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   "Separação documentada entre receita real do produto e float D-3/CDI, expondo diferença de até R$ 90k/mês que não era receita do [Produto]",
-                  "Mapa de 8 riscos com probabilidade, impacto e área responsável — ninguém pôde alegar desconhecimento",
+                  "Mapa de 8 riscos com probabilidade, impacto e área responsável: ninguém pôde alegar desconhecimento",
                   "10 dependências críticas categorizadas com status, área responsável e impacto no avanço",
                   "Service Blueprint completo com 10 etapas, 4 swim lanes e pontos críticos por área",
                   "Cenários financeiros (pessimista/moderado/otimista) para discussão com Financeiro e Sponsor",
@@ -594,7 +594,7 @@ export default function CaseCIEE() {
                 className="text-foreground font-medium text-base leading-relaxed italic"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                "Senioridade não é só saber fazer. É saber o que dizer quando é difícil — e ter a
+                "Senioridade não é só saber fazer. É saber o que dizer quando é difícil, e ter a
                 disciplina de documentar o que ninguém quer ver registrado."
               </p>
               <p className="text-xs text-muted-foreground mt-3">Product Designer Sênior · [Empresa], 2026</p>
